@@ -1,24 +1,23 @@
-# ==========================================
-# QA & Chrome Debugging Artifacts
-# ==========================================
+# Chrome QA & Debugging
 chrome_qa_profile/
 *.pma
 Crashpad/
 
-# ==========================================
-# Frontend (Next.js & Node)
-# ==========================================
-frontend/node_modules/
+# Frontend (Node / Next.js)
 node_modules/
-frontend/.next/
+frontend/node_modules/
 .next/
+frontend/.next/
+out/
 frontend/out/
+build/
 frontend/build/
+dist/
 frontend/dist/
 .pnp
 .pnp.js
 
-# Environment Variables & Secrets (CRITICAL)
+# Environment Files & Secrets (CRITICAL)
 .env
 .env*.local
 frontend/.env
@@ -28,33 +27,26 @@ backend/.env*.local
 *.env
 application-secret.*
 
-# ==========================================
 # Backend (Java / Maven / Gradle)
-# ==========================================
-backend/target/
 target/
+backend/target/
 *.class
 *.jar
 *.war
 *.ear
 .gradle/
-build/
-backend/logs/
 logs/
+backend/logs/
 *.log
 
-# ==========================================
-# Database & Dumps
-# ==========================================
+# Database & Backups
 *.sql.gz
 *.dump
 *.backup
 pgdata/
 db_data/
 
-# ==========================================
-# Testing, Coverage & IDEs
-# ==========================================
+# Testing & OS
 coverage/
 playwright-report/
 test-results/

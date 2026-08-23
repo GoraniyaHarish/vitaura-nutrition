@@ -1,6 +1,19 @@
 # GrønLiv — Premium D2C Organic Nutrition Storefront
 
-A full-stack, luxury e-commerce web application engineered with a Next.js App Router frontend, a Java (Spring Boot) REST API, and PostgreSQL relational database persistence.
+[![CI Pipeline](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci.yml)
+[![Next.js](https://img.shields.io/badge/Frontend-Next.js%2016-black?logo=next.js)](https://nextjs.org/)
+[![Java](https://img.shields.io/badge/Backend-Spring%20Boot-brightgreen?logo=spring)](https://spring.io/)
+[![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL%2016-blue?logo=postgresql)](https://www.postgresql.org/)
+
+A production-ready full-stack e-commerce web platform engineered with a Next.js App Router storefront, Java (Spring Boot) REST API, and PostgreSQL relational database persistence.
+
+---
+
+## 📸 Storefront Preview
+
+| Desktop Showcase (1440px) | Mobile Experience (390px) |
+| :---: | :---: |
+| ![Desktop View](docs/screenshots/desktop-hero.png) | ![Mobile View](docs/screenshots/mobile-pdp.png) |
 
 ---
 
@@ -8,7 +21,7 @@ A full-stack, luxury e-commerce web application engineered with a Next.js App Ro
 
 - **Frontend:** Next.js (App Router), TypeScript, Tailwind CSS, Lucide React
 - **Backend:** Java (Spring Boot / REST API), Spring Data JPA / Hibernate
-- **Database:** PostgreSQL
+- **Database:** PostgreSQL (Docker containerized)
 - **Design System:** Custom Organic Luxury Design Tokens
 
 ---
@@ -27,38 +40,35 @@ gronliv/
 │   ├── src/main/resources/     # application.properties & configuration
 │   └── pom.xml
 ├── docs/                       # Architecture & API documentation
+├── .github/workflows/ci.yml    # Automated GitHub Actions pipeline
+├── docker-compose.yml          # 1-Click PostgreSQL container
 ├── .env.local.example          # Frontend environment template
 ├── .gitignore
-└── README.md
+└── package.json                # Unified monorepo runner
 ```
 
 ---
 
-## 🚀 Quick Start Guide
+## 🚀 1-Click Quickstart Guide
 
-### 1. Prerequisites
-- **Node.js**: v18.0+ / npm v9+
-- **Java JDK**: 17+ or 25 LTS
-- **Maven**: 3.9+
-- **PostgreSQL**: 15+
+### 1. Start Database Container
 
-### 2. Frontend Setup
 ```bash
-cd frontend
+docker compose up -d
+```
+
+### 2. Install Root Dependencies & Run Everything
+
+```bash
 npm install
 npm run dev
 ```
-The storefront will run locally at `http://localhost:3000`.
 
-### 3. Backend Setup
+* Storefront: `http://localhost:3000`
+* API Service: `http://localhost:8080`
+
+### 3. Production Build Verification
+
 ```bash
-cd backend
-mvn spring-boot:run
+npm run build
 ```
-The Spring Boot REST API will run locally at `http://localhost:8080`.
-
----
-
-## 🔒 Security & Environment Setup
-- Copy `.env.local.example` to `frontend/.env.local` and `backend/.env` for local configuration.
-- Never commit real credentials or secret keys to version control.

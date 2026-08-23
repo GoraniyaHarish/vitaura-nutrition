@@ -1,0 +1,19 @@
+{
+  "name": "gronliv-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-Stack D2C Organic Nutrition Platform (Next.js + Spring Boot + PostgreSQL)",
+  "scripts": {
+    "install:all": "npm install --prefix frontend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "cd backend && mvn spring-boot:run",
+    "dev": "concurrently -n \"FRONTEND,BACKEND\" -c \"cyan,green\" \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "build:frontend": "npm run build --prefix frontend",
+    "build:backend": "cd backend && mvn clean package -DskipTests",
+    "build": "npm run build:frontend && npm run build:backend",
+    "lint": "npm run lint --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
