@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Merriweather } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
 import CustomCursor from "@/components/ui/CustomCursor";
 import "./globals.css";
 
@@ -104,7 +105,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${manrope.variable} ${merriweather.variable}`}>
-      <body className="antialiased min-h-screen flex flex-col">
+      <body className="antialiased min-h-screen flex flex-col bg-[#FAF8F5] text-[#112419]">
+        <NextTopLoader
+          color="#C8A265"
+          height={3}
+          showSpinner={false}
+          shadow="0 0 10px #C8A265, 0 0 5px #FAF8F5"
+          easing="cubic-bezier(0.16, 1, 0.3, 1)"
+        />
         <CustomCursor />
         {children}
       </body>
