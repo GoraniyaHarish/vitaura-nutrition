@@ -7,13 +7,16 @@ import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Footer } from "@/components/layout/Footer";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { WhatsAppFAB } from "@/components/ui/WhatsAppFAB";
-import { ArrowLeft, ShoppingCart, ShieldCheck, Flame, Zap, Star, CheckCircle2, Truck } from "lucide-react";
+import { AddToCartButton } from "@/components/ui/AddToCartButton";
+import { ArrowLeft, ShieldCheck, Flame, Zap, Star, CheckCircle2, Truck } from "lucide-react";
+import { type Product } from "@/lib/api";
 
 const PRODUCTS_DATA: Record<string, {
+  id: number;
   name: string;
   shortDescription: string;
   description: string;
-  price: number;
+  price: number; // in rupees
   category: string;
   tags: string[];
   imageUrl: string;
@@ -21,6 +24,7 @@ const PRODUCTS_DATA: Record<string, {
   ingredients: string[];
 }> = {
   "classic-vanilla-bean": {
+    id: 1,
     name: "Classic Vanilla Bean",
     shortDescription: "Smooth, rich Madagascar vanilla blended with plant-based protein for clean, sustained vitality.",
     description: "Our Classic Vanilla Bean shake is crafted from pure, natural vanilla beans and bio-available plant protein. Each serving is freshly prepared to order in Rajkot, delivering a smooth velvet texture with zero artificial sweeteners, synthetic gums, or preservatives.",
@@ -32,6 +36,7 @@ const PRODUCTS_DATA: Record<string, {
     ingredients: ["Fresh Madagascar Vanilla Bean", "Pea & Rice Protein Isolate", "Almond Milk", "Medjool Dates"],
   },
   "double-dark-cacao": {
+    id: 2,
     name: "Double Dark Cacao",
     shortDescription: "Intense raw single-origin cacao combined with Medjool dates and oats for deep post-workout recovery.",
     description: "The Double Dark Cacao blend combines raw organic cacao with organic dates and whole oats. Rich in natural antioxidants, magnesium, and plant protein without artificial additives.",
@@ -43,6 +48,7 @@ const PRODUCTS_DATA: Record<string, {
     ingredients: ["Raw Cacao Powder", "Medjool Dates", "Organic Rolled Oats", "Unsweetened Almond Milk"],
   },
   "berry-antioxidant": {
+    id: 3,
     name: "Berry Antioxidant",
     shortDescription: "A vibrant infusion of wild strawberries and blueberries packed with essential cellular vitamins.",
     description: "Our Berry Antioxidant shake bursts with real hand-picked strawberries and blueberries. Every bottle delivers high-potency antioxidants and natural vitamin C.",
@@ -73,6 +79,30 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     notFound();
   }
 
+  const fullProduct: Product = {
+    id: product.id,
+    slug: slug,
+    name: product.name,
+    shortDescription: product.shortDescription,
+    description: product.description,
+    price: product.price * 100, // in paise
+    imageUrl: product.imageUrl,
+    category: { id: 1, slug: "shakes", name: product.category },
+    tags: product.tags,
+    ingredients: [],
+    nutritionInfo: {
+      servingSize: "300ml",
+      calories: product.nutrition.calories,
+      protein: parseInt(product.nutrition.protein) * 10,
+      carbohydrates: parseInt(product.nutrition.carbs) * 10,
+      fat: parseInt(product.nutrition.fat) * 10,
+      fiber: parseInt(product.nutrition.fiber) * 10,
+      sugar: 120,
+    },
+    available: true,
+    featured: true,
+  };
+
   return (
     <>
       <AnnouncementBar />
@@ -91,7 +121,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           {/* Desktop & Mobile Main PDP Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 bg-white rounded-3xl p-6 md:p-10 border border-[#183324]/10 shadow-[0_4px_24px_rgba(17,36,25,0.04)]">
             
-            {/* Left Column: Sticky Gallery (Desktop) / High Impact Image (Mobile) */}
+            {/* Left Column: Sticky Gallery */}
             <div className="lg:col-span-6 flex flex-col items-center lg:sticky lg:top-24 lg:self-start">
               <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-[#F4F0E8] border border-[#183324]/10 shadow-sm flex items-center justify-center group">
                 <Image
@@ -151,13 +181,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                 {/* Mobile & Desktop Add-to-Cart Purchase Bar */}
                 <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#183324]/10 mb-6 space-y-3">
-                  <Link
-                    href="/cart"
-                    className="w-full bg-[#112419] text-[#FAF8F5] hover:bg-[#183324] font-bold text-sm py-4 px-8 rounded-xl transition-all text-center flex items-center justify-center gap-2 shadow-md font-manrope uppercase tracking-wider active:scale-[0.99]"
-                  >
-                    <ShoppingCart size={18} strokeWidth={2.2} />
-                    <span>Add to Cart — ₹{product.price}</span>
-                  </Link>
+                  <AddToCartButton product={fullProduct} />
 
                   <div className="flex items-center justify-between text-xs text-[#48544D] px-2 font-manrope font-semibold">
                     <span className="flex items-center gap-1.5 text-[#112419]">
@@ -201,7 +225,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                   </div>
                 </div>
 
-                {/* Fresh Ingredients Accordion/Card */}
+                {/* Fresh Ingredients Card */}
                 <div className="bg-white rounded-2xl p-5 border border-[#183324]/10 shadow-xs">
                   <h3 className="text-xs font-bold text-[#112419] mb-2 flex items-center gap-1.5 uppercase tracking-wider font-manrope">
                     <Zap size={16} className="text-[#C8A265]" />

@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { type Product } from "@/lib/api";
+import { useCart } from "@/context/CartContext";
 
 const DEMO_CATEGORIES = [
   { slug: "all", name: "All" },
@@ -116,19 +117,19 @@ const DEMO_PRODUCTS: Product[] = [
 
 export function MenuPageContent() {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [cartItems, setCartItems] = useState<Record<number, number>>({});
+  const { addToCart, cartCount } = useCart();
 
   const filteredProducts =
     activeCategory === "all"
       ? DEMO_PRODUCTS
       : DEMO_PRODUCTS.filter((p) => p.category.slug === activeCategory);
 
-  const handleAddToCart = useCallback((product: Product) => {
-    setCartItems((prev) => ({
-      ...prev,
-      [product.id]: (prev[product.id] || 0) + 1,
-    }));
-  }, []);
+  const handleAddToCart = useCallback(
+    (product: Product) => {
+      addToCart(product);
+    },
+    [addToCart]
+  );
 
   return (
     <div className="container-gronliv py-10 md:py-16">
@@ -199,27 +200,21 @@ export function MenuPageContent() {
         </div>
       )}
 
-      {/* Cart notification (minimal) */}
-      {Object.values(cartItems).reduce((a, b) => a + b, 0) > 0 && (
+      {/* Cart notification */}
+      {cartCount > 0 && (
         <div
-          className="fixed bottom-24 md:bottom-8 left-1/2 -translate-x-1/2 bg-[#154212] text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-3 z-40"
+          className="fixed bottom-24 md:bottom-8 left-1/2 -translate-x-1/2 bg-[#112419] text-[#FAF8F5] border border-[#C8A265]/40 px-6 py-3.5 rounded-full shadow-xl flex items-center gap-4 z-40"
           role="status"
           aria-live="polite"
         >
           <span
-            className="font-semibold"
-            style={{ fontFamily: "var(--font-manrope)" }}
+            className="font-semibold text-xs uppercase tracking-wider font-manrope"
           >
-            {Object.values(cartItems).reduce((a, b) => a + b, 0)} item
-            {Object.values(cartItems).reduce((a, b) => a + b, 0) > 1
-              ? "s"
-              : ""}{" "}
-            in cart
+            {cartCount} item{cartCount > 1 ? "s" : ""} in cart
           </span>
           <a
             href="/cart"
-            className="bg-white text-[#154212] px-3 py-1 rounded-full text-sm font-bold"
-            style={{ fontFamily: "var(--font-manrope)" }}
+            className="bg-[#C8A265] text-[#112419] px-4 py-1.5 rounded-full text-xs font-bold font-manrope uppercase tracking-wider hover:bg-[#D8B778] transition-colors"
           >
             View Cart
           </a>
