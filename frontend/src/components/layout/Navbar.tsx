@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ShoppingCart, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useCart } from "@/context/CartContext";
 
 const NAV_LINKS = [
   { href: "/menu", label: "Our Menu" },
@@ -18,7 +19,8 @@ export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const cartCount = 0;
+  const { cartCount, isHydrated } = useCart();
+  const displayCartCount = isHydrated ? cartCount : 0;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -89,15 +91,15 @@ export function Navbar() {
             <Link
               href="/cart"
               className="relative p-2.5 rounded-full text-[#112419] hover:bg-[#183324]/10 transition-colors"
-              aria-label={`Shopping cart${cartCount > 0 ? `, ${cartCount} items` : ""}`}
+              aria-label={`Shopping cart${displayCartCount > 0 ? `, ${displayCartCount} items` : ""}`}
             >
               <ShoppingCart size={22} strokeWidth={2} />
-              {cartCount > 0 && (
+              {displayCartCount > 0 && (
                 <span
                   className="absolute -top-0.5 -right-0.5 bg-[#C8A265] text-[#112419] text-[10px] font-extrabold rounded-full w-4.5 h-4.5 flex items-center justify-center animate-pulse"
                   aria-hidden="true"
                 >
-                  {cartCount > 9 ? "9+" : cartCount}
+                  {displayCartCount > 9 ? "9+" : displayCartCount}
                 </span>
               )}
             </Link>
@@ -139,12 +141,12 @@ export function Navbar() {
               href="/cart"
               onClick={() => setMobileMenuOpen(false)}
               className="relative p-2 rounded-full text-[#112419]"
-              aria-label={`Shopping cart${cartCount > 0 ? `, ${cartCount} items` : ""}`}
+              aria-label={`Shopping cart${displayCartCount > 0 ? `, ${displayCartCount} items` : ""}`}
             >
               <ShoppingCart size={22} strokeWidth={2} />
-              {cartCount > 0 && (
+              {displayCartCount > 0 && (
                 <span className="absolute -top-0.5 -right-0.5 bg-[#C8A265] text-[#112419] text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
-                  {cartCount > 9 ? "9+" : cartCount}
+                  {displayCartCount > 9 ? "9+" : displayCartCount}
                 </span>
               )}
             </Link>

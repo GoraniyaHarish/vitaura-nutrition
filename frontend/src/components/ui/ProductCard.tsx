@@ -5,21 +5,24 @@ import Link from "next/link";
 import { ShoppingCart, Star, Sparkles } from "lucide-react";
 import { type Product } from "@/lib/api";
 import { formatPrice } from "@/lib/utils";
+import { useCart } from "@/context/CartContext";
 
 interface ProductCardProps {
   product: Product;
   onAddToCart?: (product: Product) => void;
 }
 
-/**
- * Product card following Aesop/Ritual D2C Luxury standards:
- * - 4/5 aspect ratio image wrapper in warm linen frame (#F4F0E8)
- * - Frosted glass floating pill tags
- * - Clear weight hierarchy for typography & pricing
- * - Tactile Add-to-Cart button with instant feedback
- */
 export function ProductCard({ product, onAddToCart }: ProductCardProps) {
+  const { addToCart } = useCart();
   const priceInRupees = product.price / 100;
+
+  const handleAddToCart = () => {
+    if (onAddToCart) {
+      onAddToCart(product);
+    } else {
+      addToCart(product);
+    }
+  };
 
   return (
     <article className="bg-white rounded-2xl overflow-hidden flex flex-col group border border-[#183324]/10 transition-all duration-300 hover:shadow-[0_12px_32px_rgba(17,36,25,0.08)] hover:-translate-y-1">
@@ -103,7 +106,7 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
 
         {/* Add to Cart CTA */}
         <button
-          onClick={() => onAddToCart?.(product)}
+          onClick={handleAddToCart}
           disabled={!product.available}
           className="w-full flex items-center justify-center gap-2 bg-[#112419] text-[#FAF8F5] py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-[#183324] active:scale-[0.98] transition-all shadow-xs disabled:opacity-50 disabled:cursor-not-allowed mt-1 cursor-pointer font-manrope border border-[#C8A265]/20"
           aria-label={`Add ${product.name} to cart`}

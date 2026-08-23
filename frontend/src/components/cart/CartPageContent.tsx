@@ -3,38 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ShoppingCart, CheckCircle2, AlertCircle, ShieldCheck, ArrowRight, Truck, Lock } from "lucide-react";
+import { ShoppingCart, CheckCircle2, AlertCircle, ShieldCheck, ArrowRight, Truck, Lock, Trash2 } from "lucide-react";
 import { createOrder, checkDelivery, type OrderResponse } from "@/lib/api";
-
-interface DemoCartItem {
-  id: number;
-  slug: string;
-  name: string;
-  price: number; // in paise
-  quantity: number;
-  imageUrl: string;
-}
+import { useCart } from "@/context/CartContext";
 
 export function CartPageContent() {
-  // Demo cart state initialized with bestsellers
-  const [items, setItems] = useState<DemoCartItem[]>([
-    {
-      id: 1,
-      slug: "classic-vanilla-bean",
-      name: "Classic Vanilla Bean",
-      price: 24900,
-      quantity: 2,
-      imageUrl: "/images/products/classic-vanilla-bean.jpg",
-    },
-    {
-      id: 2,
-      slug: "double-dark-cacao",
-      name: "Double Dark Cacao",
-      price: 27900,
-      quantity: 1,
-      imageUrl: "/images/products/double-dark-cacao.jpg",
-    },
-  ]);
+  const { items, updateQuantity, removeItem, clearCart, isHydrated } = useCart();
 
   const [form, setForm] = useState({
     name: "Demo Customer",
@@ -48,20 +22,6 @@ export function CartPageContent() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [orderResult, setOrderResult] = useState<OrderResponse | null>(null);
-
-  const updateQuantity = (id: number, delta: number) => {
-    setItems((prev) =>
-      prev
-        .map((item) => {
-          if (item.id === id) {
-            const newQty = item.quantity + delta;
-            return newQty > 0 && newQty <= 50 ? { ...item, quantity: newQty } : item;
-          }
-          return item;
-        })
-        .filter((item) => item.quantity > 0)
-    );
-  };
 
   const calculateSubtotalPaise = () => items.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
@@ -102,6 +62,7 @@ export function CartPageContent() {
       });
 
       setOrderResult(res);
+      clearCart();
     } catch (err: unknown) {
       if (err instanceof Error) {
         setError(err.message || "Order placement failed.");
@@ -112,6 +73,18 @@ export function CartPageContent() {
       setLoading(false);
     }
   };
+
+  if (!isHydrated) {
+    return (
+      <div className="container-gronliv py-20 text-center">
+        <div className="max-w-md mx-auto animate-pulse">
+          <div className="w-16 h-16 bg-[#183324]/10 rounded-full mx-auto mb-4" />
+          <div className="h-6 bg-[#183324]/10 rounded w-1/2 mx-auto mb-2" />
+          <div className="h-4 bg-[#183324]/10 rounded w-3/4 mx-auto" />
+        </div>
+      </div>
+    );
+  }
 
   if (orderResult) {
     return (
@@ -250,6 +223,7 @@ export function CartPageContent() {
                     type="button"
                     onClick={() => updateQuantity(item.id, -1)}
                     className="px-3 py-1.5 hover:bg-[#183324]/10 text-[#112419] font-bold text-sm transition-colors cursor-pointer"
+                    aria-label="Decrease quantity"
                   >
                     -
                   </button>
@@ -260,13 +234,26 @@ export function CartPageContent() {
                     type="button"
                     onClick={() => updateQuantity(item.id, 1)}
                     className="px-3 py-1.5 hover:bg-[#183324]/10 text-[#112419] font-bold text-sm transition-colors cursor-pointer"
+                    aria-label="Increase quantity"
                   >
                     +
                   </button>
                 </div>
+
+                {/* Line total */}
                 <span className="font-extrabold text-[#112419] min-w-[70px] text-right font-manrope text-base">
                   ₹{Math.round((item.price * item.quantity) / 100)}
                 </span>
+
+                {/* Explicit Trash Removal Button */}
+                <button
+                  type="button"
+                  onClick={() => removeItem(item.id)}
+                  className="p-2 text-[#48544D] hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors cursor-pointer"
+                  aria-label="Remove item"
+                >
+                  <Trash2 size={16} />
+                </button>
               </div>
             </div>
           ))}
@@ -365,7 +352,7 @@ export function CartPageContent() {
               disabled={loading}
               className="w-full bg-[#112419] hover:bg-[#183324] text-[#FAF8F5] py-4 px-4 rounded-xl font-bold text-xs uppercase tracking-widest transition-all shadow-md disabled:opacity-50 mt-4 cursor-pointer font-manrope border border-[#C8A265]/20"
             >
-              {loading ? "Processing Demo Order..." : "Place Demo Order"}
+              {loading ? "Processing Order..." : "Place Order"}
             </button>
 
             <div className="flex items-center justify-center gap-1.5 text-[11px] text-[#48544D] mt-2 font-manrope">
