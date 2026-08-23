@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GronLiv - Our Menu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=Merriweather:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#ffffff",
+                      "surface-container-low": "#fbf2e8",
+                      "background": "#fff8f3",
+                      "on-tertiary-fixed": "#082009",
+                      "tertiary-fixed-dim": "#b1cfab",
+                      "surface-variant": "#eae1d7",
+                      "on-error": "#ffffff",
+                      "surface-container-high": "#f0e7dd",
+                      "on-tertiary-container": "#adcaa6",
+                      "on-surface-variant": "#42493e",
+                      "on-error-container": "#93000a",
+                      "on-primary": "#ffffff",
+                      "on-secondary-container": "#656460",
+                      "surface-bright": "#fff8f3",
+                      "surface-dim": "#e1d9cf",
+                      "on-secondary-fixed-variant": "#474743",
+                      "primary-fixed": "#bcf0ae",
+                      "on-background": "#1f1b15",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface": "#1f1b15",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#344d31",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#e5e2dc",
+                      "primary": "#154212",
+                      "tertiary": "#263f25",
+                      "surface-tint": "#3b6934",
+                      "error": "#ba1a1a",
+                      "inverse-primary": "#a1d494",
+                      "tertiary-fixed": "#cdebc5",
+                      "surface": "#fff8f3",
+                      "tertiary-container": "#3d563a",
+                      "outline": "#72796e",
+                      "inverse-surface": "#343029",
+                      "on-primary-fixed": "#002201",
+                      "secondary-fixed-dim": "#c9c6c1",
+                      "surface-container-highest": "#eae1d7",
+                      "on-secondary-fixed": "#1c1c18",
+                      "primary-container": "#2d5a27",
+                      "on-primary-container": "#9dd090",
+                      "outline-variant": "#c2c9bb",
+                      "inverse-on-surface": "#f8efe5",
+                      "surface-container": "#f6ece3",
+                      "primary-fixed-dim": "#a1d494",
+                      "on-primary-fixed-variant": "#23501e",
+                      "secondary": "#5f5e5a",
+                      "secondary-container": "#e5e2dc"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "32px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px",
+                      "stack-sm": "16px",
+                      "stack-lg": "64px",
+                      "base": "8px",
+                      "container-max": "1280px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "caption": [
+                              "Manrope"
+                      ],
+                      "display-lg": [
+                              "Manrope"
+                      ],
+                      "body-lg": [
+                              "Merriweather"
+                      ],
+                      "body-md": [
+                              "Merriweather"
+                      ],
+                      "display-lg-mobile": [
+                              "Manrope"
+                      ],
+                      "label-md": [
+                              "Manrope"
+                      ],
+                      "headline-sm": [
+                              "Manrope"
+                      ],
+                      "headline-md": [
+                              "Manrope"
+                      ]
+              },
+              "fontSize": {
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "30px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "26px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fff8f3; /* Custom background color for brand */
+            color: #1f1b15;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/10 shadow-sm hidden md:flex w-full">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="text-headline-sm font-headline-md font-bold text-primary dark:text-inverse-primary">
+                GronLiv
+            </div>
+<nav class="flex gap-gutter items-center">
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary pb-1" href="#">Our Menu</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary pb-1" href="#">Ingredients</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary pb-1" href="#">Nutrition</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary pb-1" href="#">About Us</a>
+</nav>
+<div class="flex gap-stack-sm items-center">
+<button class="hover:bg-primary-container/10 transition-colors duration-200 p-2 rounded-full flex items-center justify-center opacity-80 hover:opacity-100 scale-95 hover:scale-100">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">shopping_cart</span>
+</button>
+<button class="hover:bg-primary-container/10 transition-colors duration-200 p-2 rounded-full flex items-center justify-center opacity-80 hover:opacity-100 scale-95 hover:scale-100">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">person</span>
+</button>
+<button class="bg-primary text-on-primary font-label-md text-label-md py-2 px-4 rounded-lg hover:bg-primary-container/90 transition-colors">Order Now</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg mb-stack-lg">
+<!-- Page Header -->
+<div class="mb-stack-lg text-center md:text-left">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-base">Our Menu</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">Fresh, natural ingredients crafted into delicious bowls and shakes to fuel your day.</p>
+</div>
+<!-- Category Filters -->
+<div class="flex flex-wrap gap-stack-sm mb-stack-lg justify-center md:justify-start">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm">All</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors border border-outline-variant/20">Bowls</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors border border-outline-variant/20">Shakes</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors border border-outline-variant/20">Healthy Bites</button>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1: Healthy Bowl -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(27,51,26,0.04)] overflow-hidden flex flex-col group border border-outline-variant/10 hover:shadow-lg transition-shadow duration-300">
+<div class="relative h-64 w-full overflow-hidden bg-surface-container-low flex items-center justify-center p-4">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant, overhead shot of a healthy bowl filled with fresh, colorful fruits like strawberries, mangoes, bananas, and seeds, arranged beautifully in a blue bowl. The background features artistic, abstract green and yellow graphics with the text 'HEALTHY BOWL'. Bright, natural lighting emphasizes the freshness. Premium food photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYvN9kAH5Ka5xLkje51I41773BEiz4M23Q_P96ENvi4U0o5x3cYoNqAxv6l4lwAaTP35EK0kzlRFGzogpIGjz4NzGIYrsNnB8BdBTRzFODFr7nLr_yVPgCV3Hjt-KHl2VaLloEPNI2CN8GChcRHucUpCtuZU3NclKFm0tDd3g6L3oftn_lRslmPoQyTzALu6IGu3ml0c5ctNCqdFU8_pP-oYAIPwYHaHeAN7nOqyQoLLj9D-h4C5Zg8c5qmDQtXvFq_Qs"/>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Signature Health Bowl</h3>
+<span class="font-headline-sm text-headline-sm text-primary">$12.99</span>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-4 flex-grow">A vibrant mix of fresh fruits, seeds, and nuts. Perfect for a refreshing start to your day.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-[#F1EDE4] text-[#3d563a] px-3 py-1 rounded-full font-label-md text-caption">Vegan</span>
+<span class="bg-[#F1EDE4] text-[#3d563a] px-3 py-1 rounded-full font-label-md text-caption">High Fiber</span>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg hover:bg-primary-container/90 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                        Add to Cart
+                    </button>
+</div>
+</div>
+<!-- Product Card 2: Signature Shake -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(27,51,26,0.04)] overflow-hidden flex flex-col group border border-outline-variant/10 hover:shadow-lg transition-shadow duration-300">
+<div class="relative h-64 w-full overflow-hidden bg-[#F6A3C4]/20 flex items-center justify-center p-4">
+<img class="h-full object-contain group-hover:scale-105 transition-transform duration-500" data-alt="A tall glass bottle filled with a creamy chocolate shake, labeled 'GronLiv Season's Sweet-ings'. The bottle is surrounded by fresh ingredients like bananas, peanut butter in a small bowl, oats spilling from a wooden scoop, chocolate chips, and various nuts on a light pink background. High-quality, appetizing product photography with soft, inviting lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTW29YRYoqHVfTSvkeA2XYnkMkAU0qSi0mn4-2lHokmHf2X6lI6VdwnoC7OBJpcxGXwvFlLJERRXLnzecDuNygE6-Cyy4CxrSugHDWY8vzZr_9L-CXEg5NF8Y4b4ignJHOHmaYw_g4Wyoym1E9dwVfLxKJjWQ8cz1pSRW7e6eW4hTIs4UsXgiInt6Ijy8IDaJFuwAxKWnF8XsENKWSpIKNHaLRy_I6xrhPaz0ASNXa1lLZb1OSanDFfp4v31d58kKfHZk"/>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Season's Sweet-ings Shake</h3>
+<span class="font-headline-sm text-headline-sm text-primary">$8.99</span>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-4 flex-grow">Rich chocolate blended with bananas, oats, and a touch of peanut butter for a protein-packed treat.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-[#F1EDE4] text-[#3d563a] px-3 py-1 rounded-full font-label-md text-caption">High Protein</span>
+<span class="bg-[#F1EDE4] text-[#3d563a] px-3 py-1 rounded-full font-label-md text-caption">Energizing</span>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg hover:bg-primary-container/90 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                        Add to Cart
+                    </button>
+</div>
+</div>
+<!-- Product Card 3: Green Detox -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(27,51,26,0.04)] overflow-hidden flex flex-col group border border-outline-variant/10 hover:shadow-lg transition-shadow duration-300">
+<div class="relative h-64 w-full overflow-hidden bg-surface-container-low flex items-center justify-center p-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A refreshing green smoothie in a clear glass jar with a metal straw, placed on a light wooden table. Beside the jar are fresh spinach leaves, green apple slices, and a half lemon. The scene is brightly lit with natural sunlight, casting soft shadows, conveying a fresh, organic, and healthy lifestyle aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgwOIF3FDBuo3iVTxCO8QJ-AICk_gLhuAuAZHK7pYraDHYrUdjwVoP8MzqojjbQspEtGQsq13mTeay8C8rzsFi5zSw6jAurcxbKltI3gSPI3I0uDCR95ujpRfKVzFT25MSI0_pMXds5WZ42lT4bEgqqAlpVHJZEGb0afLfqX7XZbkid3tA0o8TkFau2SvJH1VkZODEkuuxhzWMAG8Bmhxeb32IHYCIMGB3YEoxFyX1Y9sTNb0gOEeDUQ"/>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Green Detox Shake</h3>
+<span class="font-headline-sm text-headline-sm text-primary">$9.50</span>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-4 flex-grow">A cleansing blend of spinach, green apple, lemon, and ginger to revitalize your system.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-[#F1EDE4] text-[#3d563a] px-3 py-1 rounded-full font-label-md text-caption">Detox</span>
+<span class="bg-[#F1EDE4] text-[#3d563a] px-3 py-1 rounded-full font-label-md text-caption">Low Calorie</span>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg hover:bg-primary-container/90 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                        Add to Cart
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-high border-t border-outline-variant/20 full-width mt-stack-lg">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-md max-w-container-max mx-auto gap-gutter">
+<div class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary mb-4 md:mb-0">
+                GronLiv
+            </div>
+<div class="text-body-md font-body-md text-primary dark:text-primary-fixed text-center md:text-left mb-4 md:mb-0">
+                © 2024 GronLiv. Freshly Prepared in Rajkot. Eat Better. Live Better.
+            </div>
+<nav class="flex flex-wrap justify-center gap-4">
+<a class="text-secondary-fixed-variant dark:text-secondary-fixed hover:text-primary transition-colors text-label-md font-label-md" href="#">Delivery Areas</a>
+<a class="text-secondary-fixed-variant dark:text-secondary-fixed hover:text-primary transition-colors text-label-md font-label-md" href="#">FAQs</a>
+<a class="text-secondary-fixed-variant dark:text-secondary-fixed hover:text-primary transition-colors text-label-md font-label-md" href="#">Terms of Service</a>
+<a class="text-secondary-fixed-variant dark:text-secondary-fixed hover:text-primary transition-colors text-label-md font-label-md" href="#">Contact Rajkot Hub</a>
+</nav>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile) -->
+<nav class="bg-surface dark:bg-surface-dim docked full-width bottom-0 md:hidden z-50 shadow-[0_-4px_12px_rgba(27,51,26,0.04)] border-t border-outline-variant/10 fixed left-0 w-full flex justify-around items-center px-4 py-2">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-variant p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">eco</span>
+<span class="text-caption font-caption">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-primary-container/20 rounded-xl px-4 py-1 active:bg-surface-variant" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span class="text-caption font-caption font-bold">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-variant p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">receipt_long</span>
+<span class="text-caption font-caption">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-variant p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="text-caption font-caption">Account</span>
+</a>
+</nav>
+</body></html>

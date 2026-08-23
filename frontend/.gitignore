@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Next.js
+.next/
+out/
+
+# Production
+build/
+dist/
+
+# Environment & Secrets (CRITICAL)
+.env
+.env*.local
+*.env
+
+# Misc & IDE
+.DS_Store
+*.pem
+*.log
+.vscode/
+.idea/
+
+# Vercel
+.vercel

@@ -1,0 +1,321 @@
+@import "tailwindcss";
+
+/* ============================================================
+   GRONLIV — Luxury Organic Nutrition Design System
+   Tailwind CSS v4 — Theme Configuration & Visual System
+   ============================================================ */
+
+@theme {
+  /* --- Brand Palette: Heritage Organic Luxury --- */
+  --color-primary: #112419;             /* Deep Heritage Emerald */
+  --color-primary-dark: #0B1911;        /* Midnight Forest */
+  --color-primary-container: #183324;   /* Deep Forest Container */
+  --color-on-primary: #FAF8F5;          /* Warm Cream Text */
+  
+  --color-sage: #2E523E;                /* Velvety Sage */
+  --color-sage-light: #416B53;          /* Soft Muted Leaf */
+  --color-sage-tint: #EEF4F0;           /* Whisper Sage Tint */
+  
+  --color-gold: #C8A265;                /* Artisanal Brass/Gold */
+  --color-gold-hover: #B89255;          /* Deep Artisanal Gold */
+  --color-gold-light: #F7F1E5;          /* Muted Champagne Highlight */
+  --color-gold-border: rgba(200, 162, 101, 0.25);
+
+  --color-canvas: #FAF8F5;              /* Organic Warm Linen Canvas */
+  --color-canvas-subtle: #F4F0E8;       /* Warm Oatmeal Surface */
+  --color-surface: #FFFFFF;             /* Pure White Highlighting Card Surface */
+  --color-surface-muted: #EFEAE1;       /* Muted Surface Frame */
+
+  --color-on-surface: #171D19;          /* High-contrast Editorial Charcoal */
+  --color-on-surface-variant: #48544D;  /* Soft Muted Slate Text */
+  --color-outline-hairline: rgba(24, 51, 36, 0.08); /* Hairline Prestige Border */
+  --color-outline-focus: #183324;       /* Focused Dark Emerald */
+
+  --color-error: #B3261E;
+  --color-error-container: #FCE8E6;
+
+  /* --- Typography Pairing --- */
+  --font-manrope: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-merriweather: "Merriweather", Georgia, serif;
+
+  /* Scale */
+  --font-size-display-lg: 3.25rem;       /* 52px */
+  --line-height-display-lg: 3.75rem;     /* 60px */
+
+  --font-size-display-mobile: 2.25rem;   /* 36px */
+  --line-height-display-mobile: 2.75rem; /* 44px */
+
+  --font-size-headline-md: 2.125rem;     /* 34px */
+  --line-height-headline-md: 2.625rem;   /* 42px */
+
+  --font-size-headline-sm: 1.5rem;       /* 24px */
+  --line-height-headline-sm: 2rem;       /* 32px */
+
+  --font-size-body-lg: 1.125rem;         /* 18px */
+  --line-height-body-lg: 1.875rem;       /* 30px */
+
+  --font-size-body-md: 1rem;             /* 16px */
+  --line-height-body-md: 1.625rem;       /* 26px */
+
+  --font-size-label-md: 0.875rem;        /* 14px */
+  --line-height-label-md: 1.25rem;       /* 20px */
+
+  --font-size-caption: 0.75rem;          /* 12px */
+  --line-height-caption: 1rem;           /* 16px */
+
+  /* --- Spacing --- */
+  --spacing-container-max: 1280px;
+
+  /* --- Radius --- */
+  --radius-sm: 0.375rem;  /* 6px */
+  --radius-DEFAULT: 0.5rem;/* 8px */
+  --radius-md: 0.75rem;  /* 12px */
+  --radius-lg: 1rem;     /* 16px */
+  --radius-xl: 1.25rem;  /* 20px */
+  --radius-2xl: 1.5rem;  /* 24px */
+  --radius-3xl: 2rem;    /* 32px */
+  --radius-full: 9999px;
+
+  /* --- Shadows & Ambient Glows --- */
+  --shadow-prestige-sm: 0 2px 8px rgba(17, 36, 25, 0.03), 0 1px 2px rgba(17, 36, 25, 0.02);
+  --shadow-prestige-card: 0 4px 20px rgba(17, 36, 25, 0.04), 0 1px 3px rgba(17, 36, 25, 0.02);
+  --shadow-prestige-hover: 0 12px 32px rgba(17, 36, 25, 0.08), 0 2px 6px rgba(17, 36, 25, 0.03);
+  --shadow-prestige-glass: 0 8px 32px rgba(17, 36, 25, 0.06);
+  
+  /* Ease */
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  background-color: var(--color-canvas);
+  color: var(--color-on-surface);
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-on-surface);
+  font-family: var(--font-merriweather);
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-body-md);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+
+.font-manrope {
+  font-family: var(--font-manrope);
+}
+
+.font-merriweather {
+  font-family: var(--font-merriweather);
+}
+
+.text-display-lg {
+  font-family: var(--font-merriweather);
+  font-size: var(--font-size-display-lg);
+  line-height: var(--line-height-display-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.text-display-mobile {
+  font-family: var(--font-merriweather);
+  font-size: var(--font-size-display-mobile);
+  line-height: var(--line-height-display-mobile);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.text-headline-md {
+  font-family: var(--font-manrope);
+  font-size: var(--font-size-headline-md);
+  line-height: var(--line-height-headline-md);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.text-headline-sm {
+  font-family: var(--font-manrope);
+  font-size: var(--font-size-headline-sm);
+  line-height: var(--line-height-headline-sm);
+  font-weight: 600;
+}
+
+.text-body-lg {
+  font-family: var(--font-merriweather);
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body-lg);
+  font-weight: 400;
+}
+
+.text-body-md {
+  font-family: var(--font-merriweather);
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-body-md);
+  font-weight: 400;
+}
+
+.text-label-md {
+  font-family: var(--font-manrope);
+  font-size: var(--font-size-label-md);
+  line-height: var(--line-height-label-md);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.text-caption {
+  font-family: var(--font-manrope);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  font-weight: 500;
+}
+
+/* ============================================================
+   SURFACE ELEVATION & PRESTIGE CARDS
+   ============================================================ */
+
+.card-prestige {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-hairline);
+  box-shadow: var(--shadow-prestige-card);
+  transition: all 0.35s var(--ease-luxury);
+}
+
+.card-prestige:hover {
+  box-shadow: var(--shadow-prestige-hover);
+  transform: translateY(-2px);
+}
+
+.hairline-border {
+  border: 1px solid rgba(24, 51, 36, 0.08);
+}
+
+.hairline-border-gold {
+  border: 1px solid rgba(200, 162, 101, 0.3);
+}
+
+/* ============================================================
+   ACCESSIBILITY FOCUS STATES
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   REDUCED MOTION COMPLIANCE
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   SELECTION
+   ============================================================ */
+
+::selection {
+  background-color: #183324;
+  color: #C8A265;
+}
+
+/* ============================================================
+   MINIMAL LUXURY SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5BCB0;
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2E523E;
+}
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+
+.container-gronliv {
+  width: 100%;
+  max-width: var(--spacing-container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem; /* 20px mobile margin */
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-gronliv {
+    padding-left: 2.5rem; /* 40px desktop margin */
+    padding-right: 2.5rem;
+  }
+}
+
+/* ============================================================
+   CHIP DECORATORS
+   ============================================================ */
+
+.chip-prestige {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #112419;
+  border: 1px solid rgba(24, 51, 36, 0.12);
+  border-radius: var(--radius-full);
+  padding: 4px 12px;
+  font-family: var(--font-manrope);
+  font-size: var(--font-size-caption);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  items-center: center;
+  gap: 6px;
+}
+
+.chip-gold {
+  background: rgba(200, 162, 101, 0.12);
+  color: #8C6A2F;
+  border: 1px solid rgba(200, 162, 101, 0.3);
+}
+
+/* ============================================================
+   MOBILE SAFE AREA (iOS)
+   ============================================================ */
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}

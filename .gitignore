@@ -1,0 +1,83 @@
+# ==========================================
+# Frontend (Next.js / Node)
+# ==========================================
+node_modules/
+**/node_modules/
+.next/
+**/.next/
+out/
+/out/
+build/
+/build/
+dist/
+/dist/
+.pnp
+.pnp.js
+
+# Environment Variables & Secrets (CRITICAL)
+.env
+.env*.local
+*.env
+application-secret.properties
+application-secret.yml
+
+# ==========================================
+# Backend (Java / Maven / Gradle)
+# ==========================================
+# Maven
+target/
+**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Gradle
+.gradle/
+**/.gradle/
+build/
+**/build/
+
+# Compiled Java Classes & Archives
+*.class
+*.jar
+*.war
+*.ear
+
+# ==========================================
+# Database (PostgreSQL Local Dumps & Logs)
+# ==========================================
+*.sql.gz
+*.dump
+*.backup
+pgdata/
+db_data/
+
+# ==========================================
+# Testing & Coverage
+# ==========================================
+coverage/
+/coverage/
+playwright-report/
+/playwright-report/
+test-results/
+/test-results/
+.nyc_output/
+chrome_qa_profile/
+
+# ==========================================
+# IDEs, System & Log Files
+# ==========================================
+.DS_Store
+Thumbs.db
+.idea/
+**/.idea/
+*.iml
+.vscode/
+**/.vscode/
+*.swp
+*.swo
+*.log
+logs/
+**/logs/

@@ -1,0 +1,28 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+
+# Compiled Archives
+*.class
+*.jar
+*.war
+
+# Environment & Secrets (CRITICAL)
+.env
+.env*.local
+*.env
+application-secret.properties
+application-secret.yml
+
+# IDE & Logs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+*.log
+logs/
+.DS_Store
+Thumbs.db

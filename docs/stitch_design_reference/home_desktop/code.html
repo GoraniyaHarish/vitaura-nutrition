@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GronLiv - Eat Better. Live Better.</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=Merriweather:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#fbf2e8",
+                        "background": "#fff8f3",
+                        "on-tertiary-fixed": "#082009",
+                        "tertiary-fixed-dim": "#b1cfab",
+                        "surface-variant": "#eae1d7",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#f0e7dd",
+                        "on-tertiary-container": "#adcaa6",
+                        "on-surface-variant": "#42493e",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#656460",
+                        "surface-bright": "#fff8f3",
+                        "surface-dim": "#e1d9cf",
+                        "on-secondary-fixed-variant": "#474743",
+                        "primary-fixed": "#bcf0ae",
+                        "on-background": "#1f1b15",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1f1b15",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#344d31",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e5e2dc",
+                        "primary": "#154212",
+                        "tertiary": "#263f25",
+                        "surface-tint": "#3b6934",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#a1d494",
+                        "tertiary-fixed": "#cdebc5",
+                        "surface": "#fff8f3",
+                        "tertiary-container": "#3d563a",
+                        "outline": "#72796e",
+                        "inverse-surface": "#343029",
+                        "on-primary-fixed": "#002201",
+                        "secondary-fixed-dim": "#c9c6c1",
+                        "surface-container-highest": "#eae1d7",
+                        "on-secondary-fixed": "#1c1c18",
+                        "primary-container": "#2d5a27",
+                        "on-primary-container": "#9dd090",
+                        "outline-variant": "#c2c9bb",
+                        "inverse-on-surface": "#f8efe5",
+                        "surface-container": "#f6ece3",
+                        "primary-fixed-dim": "#a1d494",
+                        "on-primary-fixed-variant": "#23501e",
+                        "secondary": "#5f5e5a",
+                        "secondary-container": "#e5e2dc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "32px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "16px",
+                        "stack-lg": "64px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "body-lg": ["Merriweather"],
+                        "body-md": ["Merriweather"],
+                        "display-lg-mobile": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "headline-sm": ["Manrope"],
+                        "headline-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #fff8f3; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<div class="bg-primary text-on-primary text-center py-2 px-4 text-label-md font-label-md">
+        Freshly Made in Rajkot
+    </div>
+<nav class="hidden md:flex bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/10 shadow-sm flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<img alt="GronLiv Logo" class="h-10 w-10 object-contain rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfEdb8rbInu9vJedYQVxn60WGcALBmEbzieEKZ8w34MJbbhF5YqT-6YVK70U_GETkIgjkLQZes3LOrCvzSB6eNeTzlrtganX0B7eJu-QodmfIEcbSYKKozCNjjayFE9bABOtItz1j3Om8en9yiGSpA-gZYcBcci0FvChX8PGl3xd1dHdTEtpBNwshFWJhZGpfsoxvkyn893TDzziaViOQhdC9lx8iTD1oG6pDoVk6jC2lGRQrkmagehu3Ov6FsuYdzOxU"/>
+<span class="text-headline-sm font-headline-md font-bold text-primary dark:text-inverse-primary">GronLiv</span>
+</div>
+<div class="flex gap-8">
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary pb-1 text-label-md font-label-md" href="#">Our Menu</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary pb-1 text-label-md font-label-md hover:bg-primary-container/10 transition-colors duration-200 px-2 rounded" href="#">Ingredients</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary pb-1 text-label-md font-label-md hover:bg-primary-container/10 transition-colors duration-200 px-2 rounded" href="#">Nutrition</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary pb-1 text-label-md font-label-md hover:bg-primary-container/10 transition-colors duration-200 px-2 rounded" href="#">About Us</a>
+</div>
+<div class="flex items-center gap-6 text-primary dark:text-primary-fixed">
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:bg-primary-container/10 p-2 rounded-full transition-colors duration-200">shopping_cart</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-primary-container/10 p-2 rounded-full transition-colors duration-200">person</span>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded font-label-md text-label-md hover:opacity-90 transition-opacity">Order Now</button>
+</div>
+</nav>
+<main class="flex-grow">
+<section class="relative w-full h-[80vh] md:h-[90vh] flex items-center justify-center overflow-hidden bg-surface-container-highest">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center md:bg-[center_top_-10rem]" data-alt="A striking lifestyle shot of premium GronLiv protein shakes in glass bottles, arranged against a sophisticated dark background with subtle workout equipment hinting at health and vitality, perfect lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCIdXZMxkejHnMw5HG7dziZEJmXehZbG4ftCYhU0DoXGZ_1FKH8VfsGhETswSQSAdEbz1N1wt8Z4sTPcBUOwE3JAgf-EIs9cp9ieAm9ak3ekjp2d1hWoTyt4kuhLhve2YF-dr0oE9fSGubyPyLP712bfu4sgJA3ptGE0zCwu40zDludd3pHDS7EQgIz-QCoAdrcdPX_ZmcJHXRMhkOJd6WdJkpC5o75qwZgLaPSsOXkmeEHHg_qVhmQ3ykMNJWO0Jl4qxs')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-20 md:mt-0">
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-primary mb-stack-sm drop-shadow-md">
+                    EAT BETTER. LIVE BETTER.
+                </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-md bg-surface/80 p-4 rounded-lg backdrop-blur-sm">
+                    Crafted for better living. Experience the new era of shakes with 100% fresh ingredients and balanced nutrition.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary-container text-on-primary px-8 py-4 rounded font-label-md text-label-md hover:opacity-90 transition-opacity shadow-lg">Explore Menu</button>
+<button class="border border-primary text-primary px-8 py-4 rounded font-label-md text-label-md hover:bg-primary/5 transition-colors bg-surface/90">Our Story</button>
+</div>
+</div>
+</section>
+<section class="py-stack-md bg-surface-container-lowest border-y border-outline-variant/20 shadow-sm relative z-20">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-wrap justify-center gap-gutter md:gap-stack-lg items-center text-center">
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-primary text-4xl">eco</span>
+<span class="text-label-md font-label-md text-on-surface">100% Fresh Prepared</span>
+</div>
+<div class="hidden md:block w-px h-12 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-primary text-4xl">block</span>
+<span class="text-label-md font-label-md text-on-surface">No Preservatives</span>
+</div>
+<div class="hidden md:block w-px h-12 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-primary text-4xl">blender</span>
+<span class="text-label-md font-label-md text-on-surface">Smooth Texture</span>
+</div>
+<div class="hidden md:block w-px h-12 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-primary text-4xl">verified</span>
+<span class="text-label-md font-label-md text-on-surface">Premium Quality</span>
+</div>
+</div>
+</section>
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid md:grid-cols-2 gap-stack-lg items-center">
+<div class="space-y-stack-sm">
+<h2 class="text-headline-md font-headline-md text-primary">Why GronLiv?</h2>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+                        We believe that what you put into your body matters. Our shakes are meticulously crafted using only the finest natural ingredients, sourced responsibly to ensure every sip delivers premium vitality.
+                    </p>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+                        No artificial flavors, no hidden sugars. Just pure, unadulterated goodness designed to fuel your modern lifestyle and support holistic well-being.
+                    </p>
+<ul class="space-y-3 mt-stack-sm">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-md font-label-md">Sustainably Sourced</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-md font-label-md">Nutritionally Balanced</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-md font-label-md">Made Daily</span>
+</li>
+</ul>
+</div>
+<div class="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(27,51,26,0.08)] group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A bright, inviting composition showing a GronLiv pink fruit shake surrounded by fresh raw ingredients like strawberries, kiwi, almonds, and dates on a light wooden surface, symbolizing natural vitality." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBg2tMg9g3MgTDE4NnkzHXXwNRuJshUOibaJF5CzFa-QMtBhDf0u8fQrLGSi-K7OEyfqWKjqZURgjRj5x_rx-XwnbOKFuoHI9P9W8KjZHBLcLdsusfbDU38qvdwbQ1QU51izA9WdAWVW78G8gvlrSZcMCmOzrfByXlKDay9F4wS3xPvpt1ANcZz8JqbmQyA7UyHlfBVjcuTi3BDqWPiRMqqctzXm7ruUQ29BCjWNcFF7LvNqD1WUfG0_yLk0cPnC_oO5M4')"></div>
+<div class="absolute inset-0 ring-1 ring-inset ring-outline-variant/20 rounded-2xl"></div>
+</div>
+</div>
+</section>
+<section class="py-stack-lg bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-stack-md">
+<h2 class="text-headline-md font-headline-md text-primary mb-2">Featured Blends</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Discover our most loved nutritional shakes.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest rounded-xl p-stack-sm shadow-[0_4px_12px_rgba(27,51,26,0.04)] hover:shadow-[0_8px_24px_rgba(27,51,26,0.08)] transition-shadow duration-300 flex flex-col group">
+<div class="h-64 rounded-lg bg-surface-variant mb-4 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up, premium lifestyle shot of a creamy vanilla protein shake in a glass bottle, perfectly lit against a minimalist cream background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRQku5uEsrhw1ezti_512I5eSzD_g35MwmgCY9t270wO3roUo4MYmcWaKNDRSSc_8N4dIS3u9tbVhiGeriAVQkBQWvNby0fL1JXw1LN4jza3tbrX3d0KtJn-pmvIBft-JJ07LDzy6IqFOOyAlQN-89Rxh_fU_p-zSRi0QvB9a0QoW6YZA2Zzif0WJdo_r7KkN6dGuAOn7ufGlVQ5bKQksvQptikzJblyqpx7UnsHexwaFo3T9rdYUq9g"/>
+<div class="absolute top-2 right-2 bg-surface-container-lowest/90 px-3 py-1 rounded-full text-caption font-caption text-primary shadow-sm backdrop-blur-sm">Vegan</div>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Classic Vanilla Bean</h3>
+<p class="text-body-md font-body-md text-on-surface-variant flex-grow">Smooth, rich vanilla blended with plant-based protein for a clean energy boost.</p>
+<div class="mt-4 flex justify-between items-center">
+<span class="text-label-md font-label-md text-primary-container">₹249</span>
+<button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">Add <span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-stack-sm shadow-[0_4px_12px_rgba(27,51,26,0.04)] hover:shadow-[0_8px_24px_rgba(27,51,26,0.08)] transition-shadow duration-300 flex flex-col group">
+<div class="h-64 rounded-lg bg-surface-variant mb-4 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up, premium lifestyle shot of a rich dark chocolate protein shake in a glass bottle, perfectly lit against a minimalist cream background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkRrnfXDgUrpcE3YeNQ3zyLJCII7O-LGEI9hWFN9XzIWkson5gWNzHD6KohOZrXqCqHUf-tpMGMWl_8UmKKAHM-Zc15H0Qd31ne_rkXl8rxR9FAvvFp3uDZRoiiOLmMk7KN8w4vl6havi6zkavsYI1Ee2LWAvwMTdIg9bI7R5Z2kTXH2vPtjog9H97T1Np21QZxNioy3pDkaHD_IRYlXCLhCoqCyilPML55OVlw_s5cOHoCdZlqEgkTg"/>
+<div class="absolute top-2 right-2 bg-surface-container-lowest/90 px-3 py-1 rounded-full text-caption font-caption text-primary shadow-sm backdrop-blur-sm">High Protein</div>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Double Dark Cacao</h3>
+<p class="text-body-md font-body-md text-on-surface-variant flex-grow">Intense raw cacao combined with dates and oats for robust recovery.</p>
+<div class="mt-4 flex justify-between items-center">
+<span class="text-label-md font-label-md text-primary-container">₹279</span>
+<button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">Add <span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-stack-sm shadow-[0_4px_12px_rgba(27,51,26,0.04)] hover:shadow-[0_8px_24px_rgba(27,51,26,0.08)] transition-shadow duration-300 flex flex-col group">
+<div class="h-64 rounded-lg bg-surface-variant mb-4 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up, premium lifestyle shot of a vibrant mixed berry protein shake in a glass bottle, perfectly lit against a minimalist cream background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmP_pDTdlWW7xxJWXRjaW1zBw6oGUxYJmVNfUuUkW9PTN4rCj46b9sfbs_EOEpIWhPMFJnvis-6jAtOBShg0J2A-Y-FvCJk_X1X6-7qsgCptNXMp1xEppLAPX09p412xGDXRWkyCqx_Mf6LTGlF6cqCJxQSpU4lmMFqIfwIOW3kimGUqjB9aA5kLf_1WsJOxYtEZz_L6OsW94m_rK2jmj1MJYNDd6qHRRsun9FfOeS2FQxkq3FD2CqZA"/>
+<div class="absolute top-2 right-2 bg-surface-container-lowest/90 px-3 py-1 rounded-full text-caption font-caption text-primary shadow-sm backdrop-blur-sm">Antioxidant</div>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Berry Antioxidant</h3>
+<p class="text-body-md font-body-md text-on-surface-variant flex-grow">A vibrant mix of strawberries and blueberries packed with essential vitamins.</p>
+<div class="mt-4 flex justify-between items-center">
+<span class="text-label-md font-label-md text-primary-container">₹299</span>
+<button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">Add <span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+</div>
+<div class="text-center mt-stack-md">
+<button class="border-b-2 border-primary-container text-primary-container font-label-md text-label-md pb-1 hover:text-primary transition-colors">View Full Menu</button>
+</div>
+</div>
+</section>
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="bg-surface-container-high rounded-3xl overflow-hidden shadow-sm flex flex-col md:flex-row">
+<div class="md:w-1/2 p-stack-lg flex flex-col justify-center">
+<h2 class="text-headline-md font-headline-md text-primary mb-4">Delivering Freshness Across Rajkot</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">
+                        We prepare every shake to order in our local hub, ensuring maximum nutrient retention and unmatched flavor. Check if we deliver to your neighborhood.
+                    </p>
+<div class="flex gap-2">
+<input class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 flex-grow text-body-md font-body-md text-on-surface" placeholder="Enter PIN code" type="text"/>
+<button class="bg-primary-container text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity whitespace-nowrap">Check</button>
+</div>
+</div>
+<div class="md:w-1/2 h-64 md:h-auto bg-surface-variant relative">
+<img class="w-full h-full object-cover" data-alt="A stylized, minimalist map illustration of Rajkot city highlighting delivery zones in varying shades of GronLiv primary green, conveying a modern and efficient local service network." data-location="Rajkot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYtqQclf9BrE44uYYIAbI5gdbVP7rz-CfY-tWXXt53cJv0dKnjvXr_FAoGqBDZPk5kPzuLsMlGhiCy9EsiEBqvAPLNGsH9bJ7kMuHPy7h6rCrCdCDY5e9l2cFAEA9NQp1IiiGrT_-f-5tNWToom1xlvHySLMeXrdqNfhgxLwYVEa7ytHEsiRf8S93PfpEFDxYY3Gq0qvzQWDNHEU6n7ETUG0WJlG0UM2bxgumpSNOolxCVKRKMkB69rQ"/>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-lowest dark:bg-surface-container-high full-width mt-stack-lg bg-surface-container-lowest dark:bg-surface-container-high border-t border-outline-variant/20 flat no shadows flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-md max-w-container-max mx-auto gap-gutter">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="flex items-center gap-3">
+<img alt="GronLiv Logo" class="h-8 w-8 object-contain rounded-full grayscale opacity-70" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJwSTSNA8PpbSx-S2_UD3sBo7IpvMSF7se_5r65FeQfBaPiWfAnJZ_8FiuXqDaBbhzBKsjrM5DQyhlPCty_UT22sdPdwNfN5uxImhHLjKlX0XFiFLqotw8qHaXFrRLN0mtN-3dAltKCORC5sxFlQ-6-NAKjL_68hxPUZ6Qk-RgJxxfJgMIHPC8vH-XYr6rKWNt1Hys9IYPOD4DV7rQSCmPC0NRJC4VTbmEAhD8nmzoyI29EA-D7sV8TdAagEb4BGsLpHE"/>
+<span class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary">GronLiv</span>
+</div>
+<p class="text-body-md font-body-md text-secondary-fixed-variant dark:text-secondary-fixed text-center md:text-left">
+                © 2024 GronLiv. Freshly Prepared in Rajkot. Eat Better. Live Better.
+            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-secondary-fixed-variant dark:text-secondary-fixed hover:text-primary transition-colors text-label-md font-label-md" href="#">Delivery Areas</a>
+<a class="text-secondary-fixed-variant dark:text-secondary-fixed hover:text-primary transition-colors text-label-md font-label-md" href="#">FAQs</a>
+<a class="text-secondary-fixed-variant dark:text-secondary-fixed hover:text-primary transition-colors text-label-md font-label-md" href="#">Terms of Service</a>
+<a class="text-secondary-fixed-variant dark:text-secondary-fixed hover:text-primary transition-colors text-label-md font-label-md" href="#">Contact Rajkot Hub</a>
+</div>
+</footer>
+<nav class="docked full-width bottom-0 md:hidden z-50 shadow-[0_-4px_12px_rgba(27,51,26,0.04)] border-t border-outline-variant/10 bg-surface dark:bg-surface-dim fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-2">
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-primary-container/20 rounded-xl px-3 py-1 active:bg-surface-variant" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="text-caption font-caption font-bold">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-variant px-3 py-1 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1">restaurant_menu</span>
+<span class="text-caption font-caption">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-variant px-3 py-1 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1">receipt_long</span>
+<span class="text-caption font-caption">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-variant px-3 py-1 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="text-caption font-caption">Account</span>
+</a>
+</nav>
+<div class="h-20 md:hidden"></div>
+</body></html>
