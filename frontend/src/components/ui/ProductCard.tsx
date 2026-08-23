@@ -26,6 +26,7 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
       {/* 4/5 Aspect Ratio Image Wrapper */}
       <Link
         href={`/product/${product.slug}`}
+        data-cursor="view"
         className="block relative aspect-[4/5] bg-[#F4F0E8] overflow-hidden flex-shrink-0"
         tabIndex={-1}
         aria-hidden="true"
