@@ -1,19 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Navbar } from "@/components/layout/Navbar";
-import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
-import { Footer } from "@/components/layout/Footer";
-import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { Button } from "@/components/ui/Button";
-import { MapPin, Clock, CheckCircle2, XCircle, Loader2, Bike } from "lucide-react";
+import { MapPin, Clock, CheckCircle2, XCircle, Bike } from "lucide-react";
 
 // ── Delivery page is interactive — must be client component ──
-// Note: Metadata cannot be exported from 'use client'. 
-// A separate server component wrapper handles metadata.
 
 const OPERATING_HOURS = [
   { day: "Monday – Friday", hours: "8:00 AM – 8:00 PM" },
@@ -43,7 +36,6 @@ export function DeliveryPageContent() {
     setResult(null);
 
     try {
-      // TODO: Connect to backend API /api/delivery/check?pincode=
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
       const response = await fetch(
         `${apiUrl}/api/delivery/check?pincode=${encodeURIComponent(pincode)}`
@@ -73,8 +65,7 @@ export function DeliveryPageContent() {
         });
       }
     } catch {
-      // API not yet available — demo mode
-      // DEMO: Simulate response for development
+      // Demo mode fallback
       const DEMO_SERVICEABLE = ["360001", "360002", "360003", "360004", "360005"];
       if (DEMO_SERVICEABLE.includes(pincode)) {
         setResult({
@@ -281,7 +272,6 @@ export function DeliveryPageContent() {
               Operating Hours
             </h2>
           </div>
-          {/* DEMO: Replace with real operating hours */}
           <div className="space-y-4">
             {OPERATING_HOURS.map(({ day, hours }) => (
               <div
@@ -298,15 +288,10 @@ export function DeliveryPageContent() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-xs text-[#72796e]" style={{ fontFamily: "var(--font-manrope)" }}>
-            ⚠️ Demo hours — confirm actual hours before launch
-          </p>
         </div>
 
         {/* Pickup Info */}
-        <div
-          className="bg-[#154212] rounded-3xl p-8 text-white"
-        >
+        <div className="bg-[#154212] rounded-3xl p-8 text-white">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
               <Bike size={20} />

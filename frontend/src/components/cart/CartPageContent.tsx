@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ShoppingCart, CheckCircle2, AlertCircle, ShieldCheck, ArrowRight, Truck, Lock } from "lucide-react";
 import { createOrder, checkDelivery, type OrderResponse } from "@/lib/api";
 
@@ -234,7 +235,7 @@ export function CartPageContent() {
             >
               <div className="flex items-center gap-3.5">
                 <div className="w-16 h-16 rounded-xl bg-[#F4F0E8] overflow-hidden relative shrink-0 border border-[#183324]/10">
-                  <img src={item.imageUrl} alt={item.name} className="w-full h-full object-cover" />
+                  <Image src={item.imageUrl} alt={item.name} fill sizes="64px" className="object-cover" />
                 </div>
                 <div>
                   <h3 className="font-bold text-[#112419] font-manrope text-base">{item.name}</h3>

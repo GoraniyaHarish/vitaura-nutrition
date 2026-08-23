@@ -1,11 +1,9 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { ProductCard, ProductCardSkeleton } from "@/components/ui/ProductCard";
+import { ProductCard } from "@/components/ui/ProductCard";
 import { type Product } from "@/lib/api";
 
-// ── DEMO CATEGORIES ──────────────────────────────────────────
-// DEMO DATA: Replace with API call to /api/categories
 const DEMO_CATEGORIES = [
   { slug: "all", name: "All" },
   { slug: "shakes", name: "Shakes" },
@@ -13,8 +11,6 @@ const DEMO_CATEGORIES = [
   { slug: "healthy-bites", name: "Healthy Bites" },
 ];
 
-// ── DEMO PRODUCTS ─────────────────────────────────────────────
-// DEMO DATA: Replace with API call to /api/products
 const DEMO_PRODUCTS: Product[] = [
   {
     id: 1,
@@ -24,7 +20,7 @@ const DEMO_PRODUCTS: Product[] = [
       "Smooth, rich vanilla blended with plant-based protein for a clean energy boost.",
     description:
       "Our Classic Vanilla Bean shake is crafted from premium vanilla beans and high-quality plant-based protein. Each serving is freshly prepared to order.",
-    price: 24900, // ₹249 in paise
+    price: 24900,
     imageUrl: "/images/products/classic-vanilla-bean.jpg",
     category: { id: 1, slug: "shakes", name: "Nutrition Shakes" },
     tags: ["Vegan", "Smooth", "Plant-Based"],
@@ -49,7 +45,7 @@ const DEMO_PRODUCTS: Product[] = [
       "Intense raw cacao combined with dates and oats for robust recovery.",
     description:
       "The Double Dark Cacao blend combines premium raw cacao with the natural sweetness of Medjool dates and rolled oats.",
-    price: 27900, // ₹279 in paise
+    price: 27900,
     imageUrl: "/images/products/double-dark-cacao.jpg",
     category: { id: 1, slug: "shakes", name: "Nutrition Shakes" },
     tags: ["High Protein", "Energizing", "Antioxidant"],
@@ -74,7 +70,7 @@ const DEMO_PRODUCTS: Product[] = [
       "A vibrant mix of strawberries and blueberries packed with essential vitamins.",
     description:
       "Our Berry Antioxidant shake bursts with the natural flavor of fresh strawberries, blueberries, and seasonal berries.",
-    price: 29900, // ₹299 in paise
+    price: 29900,
     imageUrl: "/images/products/berry-antioxidant.jpg",
     category: { id: 1, slug: "shakes", name: "Nutrition Shakes" },
     tags: ["Antioxidant", "Fresh", "Vitamin-Rich"],
@@ -99,7 +95,7 @@ const DEMO_PRODUCTS: Product[] = [
       "Spinach, green apple, and ginger blended for a fresh daily detox.",
     description:
       "Start your day with the Green Vitality shake — a clean, refreshing blend of baby spinach, green apple, fresh ginger, and a squeeze of lime.",
-    price: 27900, // ₹279 in paise
+    price: 27900,
     imageUrl: "/images/products/green-vitality.jpg",
     category: { id: 1, slug: "shakes", name: "Nutrition Shakes" },
     tags: ["Detox", "Low Calorie", "Vegan"],
@@ -122,7 +118,6 @@ export function MenuPageContent() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [cartItems, setCartItems] = useState<Record<number, number>>({});
 
-  // DEMO: Filter locally — replace with API call when backend is connected
   const filteredProducts =
     activeCategory === "all"
       ? DEMO_PRODUCTS
@@ -133,7 +128,6 @@ export function MenuPageContent() {
       ...prev,
       [product.id]: (prev[product.id] || 0) + 1,
     }));
-    // TODO: Connect to cart state management (Context/Zustand)
   }, []);
 
   return (

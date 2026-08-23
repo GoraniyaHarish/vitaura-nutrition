@@ -39,14 +39,6 @@ const VALUES = [
   },
 ];
 
-// Bento grid ingredients — for illustration
-const INGREDIENTS = [
-  { name: "Fresh Berries", src: "/images/ingredients/berries.jpg", span: "col-span-2 row-span-2", label: "Seasonal Fruits" },
-  { name: "Almonds", src: "/images/ingredients/almonds.jpg", span: "col-span-1", label: "Nuts & Seeds" },
-  { name: "Dark Cacao", src: "/images/ingredients/cacao.jpg", span: "col-span-1", label: "Raw Cacao" },
-  { name: "Dates", src: "/images/ingredients/dates.jpg", span: "col-span-2", label: "Crafted Daily" },
-];
-
 export default function AboutPage() {
   return (
     <>

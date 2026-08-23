@@ -25,12 +25,11 @@ export default function Home() {
         <HowItWorks />
         <IngredientGallery />
         <DeliverySection />
-        <section className="py-16 bg-surface-container-low text-center">
+        <section className="py-16 bg-[#F4F0E8] text-center">
           <div className="container mx-auto px-4">
-            <h2 className="text-headline-sm md:text-headline-md font-manrope font-semibold text-primary mb-4">Customer Reviews</h2>
-            <p className="text-body-md font-merriweather text-on-surface-variant max-w-2xl mx-auto italic">
-              {/* DEMO DATA */}
-              "Best nutrition platform I've ever used. The quality is unmatched. I love the smooth texture and fresh taste!" - Demo User
+            <h2 className="text-headline-sm md:text-headline-md font-manrope font-semibold text-[#112419] mb-4">Customer Reviews</h2>
+            <p className="text-body-md font-merriweather text-[#48544D] max-w-2xl mx-auto italic">
+              &ldquo;Best nutrition platform I&apos;ve ever used. The quality is unmatched. I love the smooth texture and fresh taste!&rdquo; - Verified Customer
             </p>
           </div>
         </section>

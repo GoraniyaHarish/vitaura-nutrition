@@ -26,10 +26,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [pathname]);
-
   return (
     <>
       {/* ── Desktop Navigation ── */}
@@ -123,6 +119,7 @@ export function Navbar() {
           {/* Visibly Large Mobile Logo */}
           <Link
             href="/"
+            onClick={() => setMobileMenuOpen(false)}
             className="flex items-center gap-2"
             aria-label="GronLiv — Home"
           >
@@ -140,6 +137,7 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <Link
               href="/cart"
+              onClick={() => setMobileMenuOpen(false)}
               className="relative p-2 rounded-full text-[#112419]"
               aria-label={`Shopping cart${cartCount > 0 ? `, ${cartCount} items` : ""}`}
             >
@@ -173,6 +171,7 @@ export function Navbar() {
                   <Link
                     key={href}
                     href={href}
+                    onClick={() => setMobileMenuOpen(false)}
                     className={cn(
                       "text-label-md px-4 py-3 rounded-xl transition-colors font-manrope font-semibold text-sm",
                       isActive
@@ -187,6 +186,7 @@ export function Navbar() {
               })}
               <Link
                 href="/menu"
+                onClick={() => setMobileMenuOpen(false)}
                 className="mt-3 bg-[#112419] text-[#FAF8F5] text-xs font-bold uppercase tracking-widest px-4 py-3.5 rounded-xl text-center hover:bg-[#183324] transition-colors font-manrope"
               >
                 Order Now
