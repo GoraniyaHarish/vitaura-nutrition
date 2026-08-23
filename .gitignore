@@ -1,52 +1,50 @@
 # ==========================================
-# Frontend (Next.js / Node)
+# QA & Chrome Debugging Artifacts
 # ==========================================
+chrome_qa_profile/
+*.pma
+Crashpad/
+
+# ==========================================
+# Frontend (Next.js & Node)
+# ==========================================
+frontend/node_modules/
 node_modules/
-**/node_modules/
+frontend/.next/
 .next/
-**/.next/
-out/
-/out/
-build/
-/build/
-dist/
-/dist/
+frontend/out/
+frontend/build/
+frontend/dist/
 .pnp
 .pnp.js
 
 # Environment Variables & Secrets (CRITICAL)
 .env
 .env*.local
+frontend/.env
+frontend/.env*.local
+backend/.env
+backend/.env*.local
 *.env
-application-secret.properties
-application-secret.yml
+application-secret.*
 
 # ==========================================
 # Backend (Java / Maven / Gradle)
 # ==========================================
-# Maven
+backend/target/
 target/
-**/target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-
-# Gradle
-.gradle/
-**/.gradle/
-build/
-**/build/
-
-# Compiled Java Classes & Archives
 *.class
 *.jar
 *.war
 *.ear
+.gradle/
+build/
+backend/logs/
+logs/
+*.log
 
 # ==========================================
-# Database (PostgreSQL Local Dumps & Logs)
+# Database & Dumps
 # ==========================================
 *.sql.gz
 *.dump
@@ -55,29 +53,15 @@ pgdata/
 db_data/
 
 # ==========================================
-# Testing & Coverage
+# Testing, Coverage & IDEs
 # ==========================================
 coverage/
-/coverage/
 playwright-report/
-/playwright-report/
 test-results/
-/test-results/
-.nyc_output/
-chrome_qa_profile/
-
-# ==========================================
-# IDEs, System & Log Files
-# ==========================================
 .DS_Store
 Thumbs.db
 .idea/
-**/.idea/
 *.iml
 .vscode/
-**/.vscode/
 *.swp
 *.swo
-*.log
-logs/
-**/logs/
