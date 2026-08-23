@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Merriweather } from "next/font/google";
+import CustomCursor from "@/components/ui/CustomCursor";
 import "./globals.css";
 
-// --- Self-hosted Fonts (no external request at runtime) ---
+// --- Self-hosted Fonts ---
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
@@ -80,7 +81,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  // Local SEO
   other: {
     "geo.region": "IN-GJ",
     "geo.placename": "Rajkot",
@@ -105,6 +105,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${manrope.variable} ${merriweather.variable}`}>
       <body className="antialiased min-h-screen flex flex-col">
+        <CustomCursor />
         {children}
       </body>
     </html>

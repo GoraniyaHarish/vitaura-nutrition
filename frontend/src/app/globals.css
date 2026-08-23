@@ -344,3 +344,10 @@ body {
 .safe-area-bottom {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
+
+/* Suppress default OS cursor on desktop devices so custom cursor is visible */
+@media (min-width: 768px) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
