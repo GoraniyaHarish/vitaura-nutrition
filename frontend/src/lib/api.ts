@@ -1,10 +1,10 @@
 // ============================================================
-// GronLiv — API Client
+// Vitaura — API Client
 // All API calls go through this client.
 // Backend URL comes from environment variable.
 // ============================================================
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+const API_BASE = process.env.NEXT_PUBLIC_VITAURA_API_URL || process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
 
 export class ApiError extends Error {
   constructor(
@@ -237,8 +237,8 @@ export async function createOrder(
     );
     const simulatedTotalPaise = simulatedSubtotalPaise + 3000;
     return {
-      orderId: `GRON-${Math.floor(100000 + Math.random() * 900000)}`,
-      orderNumber: `GRON-${Math.floor(100000 + Math.random() * 900000)}`,
+      orderId: `VIT-${Math.floor(100000 + Math.random() * 900000)}`,
+      orderNumber: `VIT-${Math.floor(100000 + Math.random() * 900000)}`,
       status: "PENDING",
       subtotal: simulatedSubtotalPaise,
       deliveryFee: 3000,

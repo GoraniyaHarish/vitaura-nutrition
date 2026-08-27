@@ -1,6 +1,6 @@
-# GRONLIV MASTER QA REPORT
+# VITAURA MASTER QA REPORT
 
-> **Brand**: GRONLIV — EAT BETTER. LIVE BETTER.  
+> **Brand**: VITAURA — EAT BETTER. LIVE BETTER.  
 > **Workspace**: `D:\GROLIV`  
 > **Evaluation Mode**: Autonomous Local Verification & Testing  
 > **Timestamp**: 2026-08-22  
@@ -12,7 +12,7 @@
 ## 1. Overall Status
 **READY FOR LOCAL DEMO**
 
-The GRONLIV platform is in a fully tested, secure, resilient, and performant state. All core customer flows, API boundaries, security red-team defenses, double-click submission guards, database persistence guarantees, responsive layouts, accessibility attributes, and SEO structures have been empirically validated on the local development environment.
+The VITAURA platform is in a fully tested, secure, resilient, and performant state. All core customer flows, API boundaries, security red-team defenses, double-click submission guards, database persistence guarantees, responsive layouts, accessibility attributes, and SEO structures have been empirically validated on the local development environment.
 
 ---
 
@@ -25,7 +25,7 @@ The GRONLIV platform is in a fully tested, secure, resilient, and performant sta
 | **Node.js Runtime** | Node 20+ / 24+ | Node.js v24.19.0 | ✅ PASS |
 | **Package Manager** | npm 10+ / 11+ | npm 11.17.0 | ✅ PASS |
 | **Database Engine** | PostgreSQL 18 | PostgreSQL 18 Server (`postgresql-x64-18`, Port 5432) | ✅ PASS |
-| **Database Name** | `gronliv` | Active database `gronliv` connected | ✅ PASS |
+| **Database Name** | `VITAURA` | Active database `VITAURA` connected | ✅ PASS |
 
 ---
 
@@ -48,7 +48,7 @@ The GRONLIV platform is in a fully tested, secure, resilient, and performant sta
 **PASS**  
 - Framework: Next.js 16 (React 19, Tailwind CSS v4, TypeScript) running on `http://localhost:3000`.
 - All routes return HTTP 200 with complete server-rendered markup:
-  - `/` — Homepage (Hero, USPs, Why GronLiv, Bestsellers, Story, CTA)
+  - `/` — Homepage (Hero, USPs, Why VITAURA, Bestsellers, Story, CTA)
   - `/menu` — Category filter tabs, responsive product grid, add-to-cart badges
   - `/product/[slug]` — Dedicated Product Detail Experience with dynamic metadata, macro nutrition breakdown (Calories, Protein, Carbs, Fat, Fiber), and quantity selector
   - `/about` — Brand philosophy, values, ingredients bento grid, Rajkot kitchen roots
@@ -142,7 +142,7 @@ The full customer lifecycle was verified:
 ## 10. SEO Results
 **SCORE: 98 / 100**  
 - Title and descriptive meta tags configured on all App Router pages.
-- Dynamic `sitemap.xml` listing all canonical URLs (`https://gronliv.in`).
+- Dynamic `sitemap.xml` listing all canonical URLs (`https://VITAURA.in`).
 - Clean `robots.txt` protecting administrative and checkout endpoints while exposing public discovery pages.
 
 ---
@@ -191,7 +191,7 @@ The full customer lifecycle was verified:
 # Environment & DB Inspection
 java -version; mvn -version; node -v; npm -v
 Get-Service -Name *postgres*
-$env:PGPASSWORD='0312'; & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -h localhost -d gronliv -c "SELECT installed_rank, version, description, success FROM flyway_schema_history;"
+$env:PGPASSWORD='0312'; & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -h localhost -d VITAURA -c "SELECT installed_rank, version, description, success FROM flyway_schema_history;"
 
 # Backend Compile & Package
 mvn clean compile -DskipTests
@@ -210,13 +210,13 @@ node test_resilience.js
 node audit_pages.js
 
 # Direct PostgreSQL Order Verification
-$env:PGPASSWORD='0312'; & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -h localhost -d gronliv -c "SELECT id, order_number, customer_name, subtotal, delivery_fee, total, payment_method, payment_status, status FROM orders ORDER BY created_at DESC LIMIT 5;"
+$env:PGPASSWORD='0312'; & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -h localhost -d VITAURA -c "SELECT id, order_number, customer_name, subtotal, delivery_fee, total, payment_method, payment_status, status FROM orders ORDER BY created_at DESC LIMIT 5;"
 ```
 
 ---
 
 ## 16. Final Build Results
-- Backend: `target/gronliv-backend-0.1.0-SNAPSHOT.jar` (**BUILD SUCCESS**)
+- Backend: `target/VITAURA-backend-0.1.0-SNAPSHOT.jar` (**BUILD SUCCESS**)
 - Frontend: Next.js 16 standalone bundle (**11/11 static pages prerendered**)
 
 ---

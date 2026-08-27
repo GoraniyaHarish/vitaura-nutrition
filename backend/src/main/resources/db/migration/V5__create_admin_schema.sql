@@ -1,5 +1,5 @@
 -- ============================================================
--- GronLiv — Flyway Migration V5
+-- Vitaura Nutrition — Flyway Migration V5
 -- Admin Users Schema
 -- ============================================================
 

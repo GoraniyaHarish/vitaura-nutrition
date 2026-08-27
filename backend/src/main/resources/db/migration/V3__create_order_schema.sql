@@ -1,5 +1,5 @@
 -- ============================================================
--- GronLiv — Flyway Migration V3
+-- Vitaura Nutrition — Flyway Migration V3
 -- Order & Payment Schema
 -- ============================================================
 -- CRITICAL: All monetary values in PAISE (integer)

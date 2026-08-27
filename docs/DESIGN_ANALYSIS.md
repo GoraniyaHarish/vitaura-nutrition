@@ -1,5 +1,5 @@
-# GronLiv — Design Analysis
-> Derived from Stitch Reference: `d:\GROLIV\stitch_gronliv_premium_nutrition_platform\`
+# VITAURA — Design Analysis
+> Derived from Stitch Reference: `d:\GROLIV\stitch_VITAURA_premium_nutrition_platform\`
 > Design system: **"Vitality & Earth"**
 
 ---
@@ -161,7 +161,7 @@ Level 3: surface-container-high (#f0e7dd)
 
 ### Mobile Navigation
 - **Top bar:** `surface/90 backdrop-blur-md`, sticky, `z-40`
-  - Left: GronLiv wordmark
+  - Left: VITAURA wordmark
   - Right: Cart icon
 - **Bottom nav:** Fixed, `z-50`, `surface`, shadow top
   - Items: Home | Menu | Orders | Account
@@ -270,7 +270,7 @@ Account → /account (future)
 2. Desktop Nav (sticky)
 3. Hero — full-viewport, lifestyle photo, headline, subtext, 2 CTAs
 4. USP Strip — 4 pillars (Fresh / No Preservatives / Smooth / Premium)
-5. Why GronLiv — 2-col: text+checklist + ingredient photo
+5. Why VITAURA — 2-col: text+checklist + ingredient photo
 6. Featured Blends — 3 product cards
 7. How It Works — 3-step process
 8. Ingredient Gallery — bento grid
@@ -363,7 +363,7 @@ Account → /account (future)
 | 5 | Nav links point to sections (Ingredients, Nutrition) not pages | Align to real route structure |
 | 6 | No cart/checkout designed | Build from design system principles |
 | 7 | No error/loading/empty states | Build full state coverage |
-| 8 | Contact email `hello@gronliv.com` hardcoded | Use environment variable |
+| 8 | Contact email `hello@VITAURA.com` hardcoded | Use environment variable |
 | 9 | "© 2024" in footer | Use dynamic year |
 | 10 | Delivery form has fake `alert()` | Connect to real backend API |
 
@@ -393,5 +393,5 @@ Account → /account (future)
 
 ---
 
-*Document created by: GronLiv UI/UX Design Agent*  
+*Document created by: VITAURA UI/UX Design Agent*  
 *Based on: Stitch reference analysis + Vitality & Earth design system*

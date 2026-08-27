@@ -1,17 +1,18 @@
-# GRONLIV — EAT BETTER. LIVE BETTER. 🧋
+# VITAURA NUTRITION — PURE NUTRITION. ELEVATED LIVING. 🌿
 
-> **Premium Fresh Nutrition Platform — Rajkot, Gujarat, India**  
-> **Evaluation Status:** `PUBLIC DEMO READY & VISUALLY APPROVED`
+> **Brand:** Vitaura Nutrition  
+> **Tagline:** "Pure Nutrition. Elevated Living."  
+> **Description:** "Vitaura is a premium D2C health and nutrition platform offering chef-crafted protein shakes, organic wellness bowls, and nutrient-dense power bites made from 100% whole, clean ingredients."
 
 ---
 
 ## 1. System Overview
 
-GronLiv is a premium nutrition platform offering fresh, preservative-free nutrition shakes and superfood bowls. 
+Vitaura Nutrition is a premium full-stack D2C health & nutrition e-commerce platform.
 
 - **Frontend:** Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4.
 - **Backend:** Spring Boot 3.5.4, Java 25 LTS, REST APIs, Spring Security.
-- **Database:** PostgreSQL 18, Flyway V1–V8 database migrations.
+- **Database:** PostgreSQL, Flyway database migrations.
 - **Monetary Standard:** Integer Paise format (`24900` paise = ₹249).
 - **Payment Architecture:** Abstracted `PaymentService` defaulting to zero-credential `DEMO` mode.
 
@@ -20,19 +21,14 @@ GronLiv is a premium nutrition platform offering fresh, preservative-free nutrit
 ## 2. Directory Structure
 
 ```text
-GROLIV/
-├── backend/            # Spring Boot REST API & PostgreSQL Flyway migrations
+vitaura/
+├── backend/            # Spring Boot REST API & PostgreSQL Flyway migrations (com.vitaura)
 ├── frontend/           # Next.js 16 App Router UI & Tailwind CSS v4 styling
 ├── docs/               # Architecture, Deployment, QA, & Structure Documentation
-│   ├── README.md
-│   ├── PROJECT_STATUS.md
-│   ├── DEPLOYMENT.md
-│   ├── QA_REPORT.md
-│   ├── PROJECT_STRUCTURE.md
-│   └── stitch_design_reference/
+├── docker-compose.yml  # PostgreSQL container
+├── .env.local.example  # Environment variables template
 ├── README.md           # Root documentation
-├── FINAL_DEPLOYMENT.md # Public demo deployment instructions
-└── .gitignore          # Root environment & build exclusions
+└── package.json        # Unified monorepo runner
 ```
 
 ---
@@ -41,17 +37,17 @@ GROLIV/
 
 ### Prerequisites
 - Java 25 LTS & Maven 3.9+
-- Node.js v24+ & npm 11+
-- PostgreSQL 18 running on `localhost:5432` with database `gronliv`
+- Node.js v20+ & npm 10+
+- PostgreSQL running on `localhost:5432` with database `vitaura_db`
 
 ### Start Backend (Port 8080)
 ```powershell
 cd backend
 $env:DB_HOST="localhost"
 $env:DB_PORT="5432"
-$env:DB_NAME="gronliv"
+$env:DB_NAME="vitaura_db"
 $env:DB_USERNAME="postgres"
-$env:DB_PASSWORD="0312"
+$env:DB_PASSWORD="your_password"
 $env:PAYMENT_PROVIDER="demo"
 mvn spring-boot:run
 ```
@@ -59,8 +55,8 @@ mvn spring-boot:run
 ### Start Frontend (Port 3000)
 ```powershell
 cd frontend
-$env:NEXT_PUBLIC_API_URL="http://localhost:8080"
+$env:NEXT_PUBLIC_VITAURA_API_URL="http://localhost:8080"
 npm run dev
 ```
 
-Visit `http://localhost:3000` in Google Chrome to test the live platform.
+Visit `http://localhost:3000` to interact with the Vitaura Nutrition storefront.

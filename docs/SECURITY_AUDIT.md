@@ -1,6 +1,6 @@
-# GronLiv — Security Audit & Red Team Report
+# VITAURA — Security Audit & Red Team Report
 
-> **Target**: GronLiv Backend API (`http://localhost:8080`) & Frontend App Router (`http://localhost:3000`)  
+> **Target**: VITAURA Backend API (`http://localhost:8080`) & Frontend App Router (`http://localhost:3000`)  
 > **Evaluation Date**: 2026-08-22  
 > **Security Posture**: PASSED (Zero Critical / High Vulnerabilities)  
 
@@ -8,7 +8,7 @@
 
 ## 1. Executive Summary
 
-A comprehensive automated and manual security red-team assessment was conducted against the GronLiv platform. All tested attack vectors—including quantity manipulation, client-side price tampering, financial calculation overrides, SQL injection payloads, unauthorized administrative route access, and IDOR order lookups—were successfully defended and rejected by the backend server.
+A comprehensive automated and manual security red-team assessment was conducted against the VITAURA platform. All tested attack vectors—including quantity manipulation, client-side price tampering, financial calculation overrides, SQL injection payloads, unauthorized administrative route access, and IDOR order lookups—were successfully defended and rejected by the backend server.
 
 ---
 

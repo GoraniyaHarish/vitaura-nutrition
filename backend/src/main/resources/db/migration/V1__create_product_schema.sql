@@ -1,5 +1,5 @@
 -- ============================================================
--- GronLiv — Flyway Migration V1
+-- Vitaura Nutrition — Flyway Migration V1
 -- Product Schema: categories, products, nutrition, ingredients
 -- ============================================================
 -- IMPORTANT: Prices stored in PAISE (1 INR = 100 paise)

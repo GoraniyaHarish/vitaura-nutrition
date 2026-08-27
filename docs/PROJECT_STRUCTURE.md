@@ -1,20 +1,20 @@
-# GRONLIV — FINAL CLEAN PROJECT ARCHITECTURE & CODE ORGANIZATION
+# VITAURA NUTRITION — PROJECT ARCHITECTURE & CODE ORGANIZATION
 
-> **Evaluation Label:** `PUBLIC DEMO READY & VISUALLY APPROVED`  
-> **Status:** Codebase audited, cleaned, simplified, compiled, and regression verified.
+> **Evaluation Label:** `PORTFOLIO READY & VERIFIED`  
+> **Brand:** Vitaura Nutrition — "Pure Nutrition. Elevated Living."
 
 ---
 
-## 1. Final Folder Structure Tree
+## 1. Project Folder Structure
 
 ```text
-GROLIV/
+vitaura/
 ├── backend/
 │   ├── src/
 │   │   └── main/
 │   │       ├── java/
-│   │       │   └── in/
-│   │       │       └── gronliv/
+│   │       │   └── com/
+│   │       │       └── vitaura/
 │   │       │           ├── config/
 │   │       │           │   ├── AppProperties.java
 │   │       │           │   ├── CorsConfig.java
@@ -72,19 +72,19 @@ GROLIV/
 │   │       │           │   ├── OrderService.java
 │   │       │           │   ├── PaymentService.java
 │   │       │           │   └── ProductService.java
-│   │       │           └── GronlivApplication.java
+│   │       │           └── VitauraApplication.java
 │   │       └── resources/
 │   │           ├── db/migration/
 │   │           │   ├── V1__create_product_schema.sql
-│   │           │   ├── V2__create_customer_and_address_schema.sql
+│   │           │   ├── V2__create_customer_schema.sql
 │   │           │   ├── V3__create_order_schema.sql
 │   │           │   ├── V4__create_delivery_schema.sql
 │   │           │   ├── V5__create_admin_schema.sql
 │   │           │   ├── V6__create_contact_schema.sql
-│   │           │   ├── V7__seed_demo_data.sql
-│   │           │   └── V8__add_demo_payment_support.sql
-│   │           ├── application.yml
-│   │           └── application-prod.yml
+│   │           │   ├── V7__create_seed_data.sql
+│   │           │   ├── V8__add_demo_payment_support.sql
+│   │           │   └── V9__add_performance_indexes.sql
+│   │           └── application.yml
 │   ├── .env.example
 │   ├── .gitignore
 │   └── pom.xml
@@ -92,9 +92,22 @@ GROLIV/
 ├── frontend/
 │   ├── public/
 │   │   └── images/
-│   │       ├── ingredients/
-│   │       ├── instagram/
-│   │       └── products/
+│   │       ├── vanilla-matcha-zen.jpg
+│   │       ├── dark-cacao-recharge.jpg
+│   │       ├── wild-berry-collagen.jpg
+│   │       ├── golden-turmeric-cleanse.jpg
+│   │       ├── acai-power-bowl.jpg
+│   │       ├── quinoa-avocado-harvest.jpg
+│   │       ├── cacao-hazelnut-energy-bites.jpg
+│   │       ├── almond-flax-protein-bar.jpg
+│   │       ├── matcha.jpg
+│   │       ├── raw-cacao.jpg
+│   │       ├── berries.jpg
+│   │       ├── almonds.jpg
+│   │       ├── avocado.jpg
+│   │       ├── kitchen.jpg
+│   │       ├── story-crafted.jpg
+│   │       └── why-vitaura-ingredients.jpg
 │   ├── src/
 │   │   ├── app/
 │   │   │   ├── about/
@@ -107,9 +120,13 @@ GROLIV/
 │   │   │   │   └── page.tsx
 │   │   │   ├── menu/
 │   │   │   │   └── page.tsx
+│   │   │   ├── privacy/
+│   │   │   │   └── page.tsx
 │   │   │   ├── product/
 │   │   │   │   └── [slug]/
 │   │   │   │       └── page.tsx
+│   │   │   ├── terms/
+│   │   │   │   └── page.tsx
 │   │   │   ├── globals.css
 │   │   │   ├── layout.tsx
 │   │   │   ├── page.tsx
@@ -127,10 +144,9 @@ GROLIV/
 │   │   │   │   ├── FeaturedProducts.tsx
 │   │   │   │   ├── FinalCTA.tsx
 │   │   │   │   ├── HeroSection.tsx
-│   │   │   │   ├── HowItWorks.tsx
 │   │   │   │   ├── IngredientGallery.tsx
 │   │   │   │   ├── USPStrip.tsx
-│   │   │   │   └── WhyGronLiv.tsx
+│   │   │   │   └── WhyVitaura.tsx
 │   │   │   ├── layout/
 │   │   │   │   ├── AnnouncementBar.tsx
 │   │   │   │   ├── Footer.tsx
@@ -139,10 +155,13 @@ GROLIV/
 │   │   │   ├── menu/
 │   │   │   │   └── MenuPageContent.tsx
 │   │   │   └── ui/
-│   │   │       ├── Badge.tsx
-│   │   │       ├── Button.tsx
+│   │   │       ├── AddToCartButton.tsx
+│   │   │       ├── CustomCursor.tsx
+│   │   │       ├── LoadingModal.tsx
 │   │   │       ├── ProductCard.tsx
 │   │   │       └── WhatsAppFAB.tsx
+│   │   ├── context/
+│   │   │   └── CartContext.tsx
 │   │   └── lib/
 │   │       ├── api.ts
 │   │       └── utils.ts
@@ -150,62 +169,11 @@ GROLIV/
 │   ├── .gitignore
 │   ├── next.config.ts
 │   ├── package.json
-│   ├── package-lock.json
-│   ├── postcss.config.mjs
 │   └── tsconfig.json
 │
 ├── docs/
-│   ├── README.md
-│   ├── PROJECT_STATUS.md
-│   ├── DEPLOYMENT.md
-│   ├── QA_REPORT.md
-│   ├── PROJECT_STRUCTURE.md
-│   └── stitch_design_reference/
-│
+├── docker-compose.yml
+├── .env.local.example
 ├── .gitignore
-├── FINAL_DEPLOYMENT.md
-└── README.md
+└── package.json
 ```
-
----
-
-## 2. Deleted Files & Rationale
-
-| Category | Deleted File / Path | Rationale |
-|---|---|---|
-| **Default SVGs** | `frontend/public/file.svg`, `globe.svg`, `next.svg`, `vercel.svg`, `window.svg` | Unused default Next.js template SVG files |
-| **Unused Frontend Component** | `frontend/src/components/product/ProductDetailContent.tsx` | Obsolete duplicate component; `/product/[slug]/page.tsx` renders product details directly |
-| **Unused Backend DTO** | `backend/.../dto/DeliveryCheckRequest.java` | Unused DTO; `/api/delivery/check` uses query param `@RequestParam("pincode")` |
-| **Over-engineered Subpackage** | `backend/.../service/payment/` (`PaymentService.java` interface, `DemoPaymentService.java`, `RazorpayPaymentService.java`, `PaymentServiceFactory.java`) | Replaced 4 redundant abstraction files with 1 clean `PaymentService.java` class directly in `in.gronliv.service` |
-
----
-
-## 3. Kept Architectural Components
-
-- **`backend/src/main/resources/db/migration/`**: Preserved Flyway migrations V1–V8. Never delete or alter applied Flyway migrations.
-- **`frontend/public/images/`**: Preserved all 25 product, ingredient, editorial, and Instagram images actively referenced by Next.js components.
-- **`frontend/src/components/`**: Preserved clean subfolder hierarchy (`cart`, `contact`, `delivery`, `home`, `layout`, `menu`, `ui`).
-
----
-
-## 4. Dependencies Cleaned
-
-Removed genuinely unused dependencies from `frontend/package.json`:
-- `@hookform/resolvers`
-- `react-hook-form`
-- `zod`
-- `framer-motion`
-
----
-
-## 5. Final Verification Matrix
-
-| Verification Check | Target Command / Method | Result | Details |
-|---|---|---|---|
-| **Frontend Production Build** | `npm run build` | ✅ **PASS** | 11 static/dynamic routes prerendered in 341ms with 0 errors |
-| **Backend Packaging** | `mvn clean package -DskipTests` | ✅ **PASS** | `gronliv-backend-0.1.0-SNAPSHOT.jar` built cleanly in 4.3s |
-| **Backend REST APIs** | `http://localhost:8080/api/health` | ✅ **PASS** | Status `200 OK` (`{"status":"ok"}`) |
-| **Frontend Navigation** | `http://localhost:3000` in Chrome | ✅ **PASS** | All 7 pages (`/`, `/menu`, `/product/[slug]`, `/about`, `/delivery`, `/contact`, `/cart`) load smoothly |
-| **Database Persistence** | PostgreSQL `orders` table query | ✅ **PASS** | Demo order `B8326E3E` verified in DB with status `CONFIRMED` & `DEMO_PAID` |
-| **Console & Network Errors** | Automated Chrome Visual Audit | ✅ **PASS** | 0 console errors, 0 network failures |
-| **Broken Images Check** | Public asset inspection | ✅ **PASS** | 0 broken images, 0 404 image errors |

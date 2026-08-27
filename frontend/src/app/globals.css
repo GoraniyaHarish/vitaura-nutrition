@@ -1,52 +1,63 @@
 @import "tailwindcss";
 
 /* ============================================================
-   GRONLIV — Luxury Organic Nutrition Design System
+   VITAURA NUTRITION — The Culinary Atelier Design System
    Tailwind CSS v4 — Theme Configuration & Visual System
    ============================================================ */
 
 @theme {
-  /* --- Brand Palette: Heritage Organic Luxury --- */
-  --color-primary: #112419;             /* Deep Heritage Emerald */
-  --color-primary-dark: #0B1911;        /* Midnight Forest */
-  --color-primary-container: #183324;   /* Deep Forest Container */
-  --color-on-primary: #FAF8F5;          /* Warm Cream Text */
-  
-  --color-sage: #2E523E;                /* Velvety Sage */
-  --color-sage-light: #416B53;          /* Soft Muted Leaf */
-  --color-sage-tint: #EEF4F0;           /* Whisper Sage Tint */
-  
-  --color-gold: #C8A265;                /* Artisanal Brass/Gold */
-  --color-gold-hover: #B89255;          /* Deep Artisanal Gold */
-  --color-gold-light: #F7F1E5;          /* Muted Champagne Highlight */
-  --color-gold-border: rgba(200, 162, 101, 0.25);
+  /* --- Brand Palette: The Dark Culinary Atelier --- */
+  --color-canvas: #12100F;              /* Deep Warm Obsidian (Main Background) */
+  --color-canvas-secondary: #1A1412;    /* Roasted Espresso */
+  --color-surface: #1A1412;             /* Roasted Espresso Surface (Card Bases) */
+  --color-surface-elevated: #211B18;    /* Warm Espresso Surface */
+  --color-surface-light: #2A221E;       /* Cacao Stone Surface */
+  --color-surface-dark: #0D0B0A;        /* Deepest Obsidian */
 
-  --color-canvas: #FAF8F5;              /* Organic Warm Linen Canvas */
-  --color-canvas-subtle: #F4F0E8;       /* Warm Oatmeal Surface */
-  --color-surface: #FFFFFF;             /* Pure White Highlighting Card Surface */
-  --color-surface-muted: #EFEAE1;       /* Muted Surface Frame */
+  --color-primary: #F7F2EA;             /* Warm Bone (Headings & Primary Text) */
+  --color-primary-dark: #C8BDB2;        /* Warm Sand Secondary */
+  --color-primary-container: #2A221E;   /* Cacao Stone Container */
+  --color-on-primary: #12100F;          /* Deep Obsidian Text on Light */
 
-  --color-on-surface: #171D19;          /* High-contrast Editorial Charcoal */
-  --color-on-surface-variant: #48544D;  /* Soft Muted Slate Text */
-  --color-outline-hairline: rgba(24, 51, 36, 0.08); /* Hairline Prestige Border */
-  --color-outline-focus: #183324;       /* Focused Dark Emerald */
+  --color-secondary: #C8BDB2;           /* Warm Sand */
+  --color-muted: #91857B;               /* Earth Grey (Descriptions & Metadata) */
+  --color-on-surface: #F7F2EA;          /* Warm Bone Primary Text */
+  --color-on-surface-variant: #C8BDB2;  /* Warm Sand Secondary Text */
 
-  --color-error: #B3261E;
-  --color-error-container: #FCE8E6;
+  --color-accent: #C87D55;              /* Tuscan Terracotta */
+  --color-accent-hover: #E09A72;        /* Warm Terracotta */
+  --color-accent-subtle: rgba(200, 125, 85, 0.15);
+
+  --color-gold: #D97706;                /* Amber Honey */
+  --color-gold-hover: #E7B56D;          /* Subtle Gold */
+  --color-gold-light: rgba(231, 181, 109, 0.15);
+  --color-gold-border: rgba(217, 119, 6, 0.3);
+
+  --color-border: rgba(247, 242, 234, 0.10);       /* Hairline Bone Outline (10%) */
+  --color-border-strong: rgba(247, 242, 234, 0.16);/* Strong Hairline (16%) */
+  --color-border-subtle: rgba(247, 242, 234, 0.06);/* Ultra-Subtle Divider */
+  --color-outline-focus: #C87D55;       /* Focus Outline (Terracotta) */
+
+  --color-success: #6D9B79;             /* Cold-Chain Forest Green */
+  --color-warning: #D97706;             /* Stock Alert Amber */
+  --color-error: #C96A62;               /* Validation Error Terracotta-Red */
+  --color-error-container: rgba(201, 106, 98, 0.15);
 
   /* --- Typography Pairing --- */
-  --font-manrope: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-merriweather: "Merriweather", Georgia, serif;
+  --font-serif: var(--font-cormorant), Cormorant Garamond, Georgia, serif;
+  --font-sans: var(--font-jakarta), Plus Jakarta Sans, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-manrope: var(--font-jakarta), Plus Jakarta Sans, -apple-system, sans-serif;
+  --font-merriweather: var(--font-cormorant), Cormorant Garamond, Georgia, serif;
 
   /* Scale */
-  --font-size-display-lg: 3.25rem;       /* 52px */
-  --line-height-display-lg: 3.75rem;     /* 60px */
+  --font-size-display-lg: 3.75rem;       /* 60px */
+  --line-height-display-lg: 4.125rem;    /* 66px */
 
-  --font-size-display-mobile: 2.25rem;   /* 36px */
-  --line-height-display-mobile: 2.75rem; /* 44px */
+  --font-size-display-mobile: 2.5rem;    /* 40px */
+  --line-height-display-mobile: 2.875rem;/* 46px */
 
-  --font-size-headline-md: 2.125rem;     /* 34px */
-  --line-height-headline-md: 2.625rem;   /* 42px */
+  --font-size-headline-md: 2.25rem;     /* 36px */
+  --line-height-headline-md: 2.75rem;   /* 44px */
 
   --font-size-headline-sm: 1.5rem;       /* 24px */
   --line-height-headline-sm: 2rem;       /* 32px */
@@ -76,12 +87,12 @@
   --radius-3xl: 2rem;    /* 32px */
   --radius-full: 9999px;
 
-  /* --- Shadows & Ambient Glows --- */
-  --shadow-prestige-sm: 0 2px 8px rgba(17, 36, 25, 0.03), 0 1px 2px rgba(17, 36, 25, 0.02);
-  --shadow-prestige-card: 0 4px 20px rgba(17, 36, 25, 0.04), 0 1px 3px rgba(17, 36, 25, 0.02);
-  --shadow-prestige-hover: 0 12px 32px rgba(17, 36, 25, 0.08), 0 2px 6px rgba(17, 36, 25, 0.03);
-  --shadow-prestige-glass: 0 8px 32px rgba(17, 36, 25, 0.06);
-  
+  /* --- Shadows & Ambient Studio Lighting --- */
+  --shadow-prestige-sm: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-prestige-card: 0 8px 24px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-prestige-hover: 0 20px 48px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(200, 125, 85, 0.08);
+  --shadow-prestige-glass: 0 8px 32px rgba(0, 0, 0, 0.45);
+
   /* Ease */
   --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -104,9 +115,9 @@ html {
 }
 
 body {
-  background-color: var(--color-canvas);
-  color: var(--color-on-surface);
-  font-family: var(--font-merriweather);
+  background-color: #12100F;
+  color: #F7F2EA;
+  font-family: var(--font-sans);
   font-size: var(--font-size-body-md);
   line-height: var(--line-height-body-md);
   -webkit-font-smoothing: antialiased;
@@ -118,83 +129,91 @@ body {
    TYPOGRAPHY UTILITIES
    ============================================================ */
 
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
 .font-manrope {
-  font-family: var(--font-manrope);
+  font-family: var(--font-sans);
 }
 
 .font-merriweather {
-  font-family: var(--font-merriweather);
+  font-family: var(--font-serif);
 }
 
 .text-display-lg {
-  font-family: var(--font-merriweather);
+  font-family: var(--font-serif);
   font-size: var(--font-size-display-lg);
   line-height: var(--line-height-display-lg);
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -0.02em;
 }
 
 .text-display-mobile {
-  font-family: var(--font-merriweather);
+  font-family: var(--font-serif);
   font-size: var(--font-size-display-mobile);
   line-height: var(--line-height-display-mobile);
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -0.015em;
 }
 
 .text-headline-md {
-  font-family: var(--font-manrope);
+  font-family: var(--font-serif);
   font-size: var(--font-size-headline-md);
   line-height: var(--line-height-headline-md);
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -0.01em;
 }
 
 .text-headline-sm {
-  font-family: var(--font-manrope);
+  font-family: var(--font-sans);
   font-size: var(--font-size-headline-sm);
   line-height: var(--line-height-headline-sm);
   font-weight: 600;
 }
 
 .text-body-lg {
-  font-family: var(--font-merriweather);
+  font-family: var(--font-sans);
   font-size: var(--font-size-body-lg);
   line-height: var(--line-height-body-lg);
   font-weight: 400;
 }
 
 .text-body-md {
-  font-family: var(--font-merriweather);
+  font-family: var(--font-sans);
   font-size: var(--font-size-body-md);
   line-height: var(--line-height-body-md);
   font-weight: 400;
 }
 
 .text-label-md {
-  font-family: var(--font-manrope);
+  font-family: var(--font-sans);
   font-size: var(--font-size-label-md);
   line-height: var(--line-height-label-md);
   font-weight: 600;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.05em;
 }
 
 .text-caption {
-  font-family: var(--font-manrope);
+  font-family: var(--font-sans);
   font-size: var(--font-size-caption);
   line-height: var(--line-height-caption);
   font-weight: 500;
 }
 
 /* ============================================================
-   SURFACE ELEVATION & PRESTIGE CARDS
+   SURFACE ELEVATION & ATELIER CARDS
    ============================================================ */
 
 .card-prestige {
   background-color: var(--color-surface);
-  border: 1px solid var(--color-outline-hairline);
+  border: 1px solid var(--color-border);
   box-shadow: var(--shadow-prestige-card);
-  transition: all 0.35s var(--ease-luxury);
+  transition: all 0.4s var(--ease-luxury);
 }
 
 .card-prestige:hover {
@@ -203,11 +222,11 @@ body {
 }
 
 .hairline-border {
-  border: 1px solid rgba(24, 51, 36, 0.08);
+  border: 1px solid var(--color-border);
 }
 
 .hairline-border-gold {
-  border: 1px solid rgba(200, 162, 101, 0.3);
+  border: 1px solid rgba(217, 119, 6, 0.25);
 }
 
 /* ============================================================
@@ -215,7 +234,7 @@ body {
    ============================================================ */
 
 @keyframes luxury-fade-up {
-  from { opacity: 0; transform: translateY(18px); }
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -224,23 +243,14 @@ body {
   to { transform: translateX(-50%); }
 }
 
-@keyframes badge-bounce {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.25); }
-}
-
 .animate-fade-up {
-  animation: luxury-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: luxury-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: luxury-marquee 28s linear infinite;
-}
-
-.animate-badge {
-  animation: badge-bounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: luxury-marquee 36s linear infinite;
 }
 
 /* ============================================================
@@ -248,7 +258,7 @@ body {
    ============================================================ */
 
 :focus-visible {
-  outline: 2px solid var(--color-sage);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
@@ -272,8 +282,8 @@ body {
    ============================================================ */
 
 ::selection {
-  background-color: #183324;
-  color: #C8A265;
+  background-color: #1A1412;
+  color: #FBF9F5;
 }
 
 /* ============================================================
@@ -290,19 +300,19 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C5BCB0;
+  background: #2A221E;
   border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2E523E;
+  background: #C87D55;
 }
 
 /* ============================================================
    LAYOUT UTILITIES
    ============================================================ */
 
-.container-gronliv {
+.container-vitaura {
   width: 100%;
   max-width: var(--spacing-container-max);
   margin-left: auto;
@@ -312,21 +322,21 @@ body {
 }
 
 @media (min-width: 768px) {
-  .container-gronliv {
+  .container-vitaura {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
 }
 
 .chip-prestige {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(243, 239, 234, 0.9);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  color: #112419;
-  border: 1px solid rgba(24, 51, 36, 0.12);
+  color: #1A1412;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   padding: 4px 12px;
-  font-family: var(--font-manrope);
+  font-family: var(--font-sans);
   font-size: var(--font-size-caption);
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -336,18 +346,17 @@ body {
 }
 
 .chip-gold {
-  background: rgba(200, 162, 101, 0.12);
-  color: #8C6A2F;
-  border: 1px solid rgba(200, 162, 101, 0.3);
+  background: rgba(217, 119, 6, 0.1);
+  color: #B45309;
+  border: 1px solid rgba(217, 119, 6, 0.25);
+}
+
+.chip-terracotta {
+  background: rgba(200, 125, 85, 0.1);
+  color: #C87D55;
+  border: 1px solid rgba(200, 125, 85, 0.25);
 }
 
 .safe-area-bottom {
   padding-bottom: env(safe-area-inset-bottom, 0px);
-}
-
-/* Suppress default OS cursor on desktop devices so custom cursor is visible */
-@media (min-width: 768px) {
-  *, *::before, *::after {
-    cursor: none !important;
-  }
 }

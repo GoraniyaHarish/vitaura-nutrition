@@ -1,4 +1,4 @@
-# GronLiv — Payment Architecture & Demo Mode Strategy
+# VITAURA — Payment Architecture & Demo Mode Strategy
 
 > **Active Strategy**: `PAYMENT_PROVIDER=demo`  
 > **Target Environment**: Public Demo / Evaluation Staging  
@@ -37,7 +37,7 @@ The payment subsystem is decoupled using the **Strategy Pattern** with a factory
 
 ## 2. Component Specification
 
-### A. Interface: `in.gronliv.service.payment.PaymentService`
+### A. Interface: `in.VITAURA.service.payment.PaymentService`
 Defines the standard lifecycle methods:
 - `PaymentResponse processPayment(Order order, String paymentMethod)`
 - `PaymentResponse verifyPayment(String paymentReference, String signature)`
@@ -45,7 +45,7 @@ Defines the standard lifecycle methods:
 - `String getProviderName()`
 
 ### B. Active Implementation: `DemoPaymentService`
-When `gronliv.payment.provider` equals `demo` (default):
+When `VITAURA.payment.provider` equals `demo` (default):
 1. Accepts order from `OrderService`.
 2. Generates simulated transaction reference: `DEMO-TXN-<RANDOM_HEX>`.
 3. Sets `order.setPaymentStatus(PaymentStatus.DEMO_PAID)`.

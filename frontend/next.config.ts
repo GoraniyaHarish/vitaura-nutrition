@@ -36,7 +36,7 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: blob:",
-              "connect-src 'self' http://localhost:8080",
+              "connect-src 'self' https: http://localhost:8080",
               "frame-ancestors 'none'",
             ].join("; "),
           },

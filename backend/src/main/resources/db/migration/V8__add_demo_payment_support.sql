@@ -1,5 +1,5 @@
 -- ============================================================
--- GronLiv — Flyway Migration V8
+-- Vitaura Nutrition — Flyway Migration V8
 -- Add DEMO Payment Support
 -- ============================================================
 

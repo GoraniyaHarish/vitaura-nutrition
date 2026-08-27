@@ -25,20 +25,30 @@ function InstagramIcon({ size = 18, className }: { size?: number; className?: st
     </svg>
   );
 }
-import { Button } from "@/components/ui/Button";
 import { submitContact } from "@/lib/api";
 
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919000000000";
-const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@gronliv.com";
-const INSTAGRAM_URL = process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com/gronliv";
-const INSTAGRAM_HANDLE = process.env.NEXT_PUBLIC_INSTAGRAM_HANDLE || "gronliv";
+const WHATSAPP_NUMBER =
+  process.env.NEXT_PUBLIC_VITAURA_WHATSAPP_NUMBER ||
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ||
+  "919000000000";
+const CONTACT_EMAIL =
+  process.env.NEXT_PUBLIC_VITAURA_CONTACT_EMAIL ||
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL ||
+  "concierge@vitauranutrition.com";
+const INSTAGRAM_URL =
+  process.env.NEXT_PUBLIC_VITAURA_INSTAGRAM_URL ||
+  process.env.NEXT_PUBLIC_INSTAGRAM_URL ||
+  "https://instagram.com/vitauranutrition";
+const INSTAGRAM_HANDLE =
+  process.env.NEXT_PUBLIC_VITAURA_INSTAGRAM_HANDLE ||
+  process.env.NEXT_PUBLIC_INSTAGRAM_HANDLE ||
+  "vitauranutrition";
 
-// Demo Instagram grid - DEMO DATA
 const DEMO_INSTAGRAM_POSTS = [
-  { id: 1, alt: "Fresh GronLiv shake with seasonal fruits", src: "/images/instagram/post-1.jpg" },
-  { id: 2, alt: "Premium ingredients laid out on a clean surface", src: "/images/instagram/post-2.jpg" },
-  { id: 3, alt: "GronLiv delivery being packed in our kitchen", src: "/images/instagram/post-3.jpg" },
-  { id: 4, alt: "Green vitality shake in morning light", src: "/images/instagram/post-4.jpg" },
+  { id: 1, alt: "Fresh Vitaura matcha formulation", src: "/images/vanilla-matcha-zen.jpg" },
+  { id: 2, alt: "Raw whole superfoods and ingredients", src: "/images/raw-cacao.jpg" },
+  { id: 3, alt: "Acai power bowl with fresh organic berries", src: "/images/acai-power-bowl.jpg" },
+  { id: 4, alt: "Dark cacao recharge formulation", src: "/images/dark-cacao-recharge.jpg" },
 ];
 
 type FormStatus = "idle" | "loading" | "success" | "error";
@@ -82,18 +92,20 @@ export function ContactPageContent() {
   };
 
   return (
-    <div className="container-gronliv py-10 md:py-16 space-y-14">
+    <div className="container-vitaura py-10 md:py-16 space-y-14 bg-transparent">
       {/* Page Header */}
       <section className="max-w-2xl">
+        <span className="text-xs font-bold text-[#C87D55] uppercase tracking-widest block mb-2 font-sans">
+          CONCIERGE & SUPPORT
+        </span>
         <h1
-          className="text-display-lg-mobile md:text-display-lg text-[#154212] mb-4"
-          style={{ fontFamily: "var(--font-manrope)" }}
+          className="text-3xl sm:text-5xl font-light text-[#F7F2EA] mb-4 tracking-tight"
+          style={{ fontFamily: "var(--font-serif)" }}
         >
           Get in Touch
         </h1>
-        <p className="text-body-lg text-[#5f5e5a]">
-          We&apos;d love to hear from you. Whether it&apos;s a question about
-          our menu, an order, or just a hello — drop us a message.
+        <p className="text-base text-[#C8BDB2] font-sans leading-relaxed">
+          Have questions about our formulations, dietary ingredients, or active orders? Our nutrition concierge team is here to assist.
         </p>
       </section>
 
@@ -101,35 +113,32 @@ export function ContactPageContent() {
       <section className="grid grid-cols-1 md:grid-cols-12 gap-6">
         {/* Contact Form (7 cols) */}
         <div
-          className="md:col-span-7 bg-white rounded-3xl p-8 border border-[#c2c9bb]/20"
-          style={{ boxShadow: "0 4px 12px rgba(27,51,26,0.04)" }}
+          className="md:col-span-7 bg-[#1A1412]/85 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl"
         >
           <h2
-            className="text-headline-sm text-[#154212] mb-6"
-            style={{ fontFamily: "var(--font-manrope)" }}
+            className="text-2xl font-light text-[#F7F2EA] mb-6 font-serif"
+            style={{ fontFamily: "var(--font-serif)" }}
           >
             Send a Message
           </h2>
 
           {status === "success" ? (
             <div className="text-center py-10">
-              <div className="w-16 h-16 bg-[#154212]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Send size={28} className="text-[#154212]" />
+              <div className="w-16 h-16 bg-[#211B18] rounded-full flex items-center justify-center mx-auto mb-4 text-[#6D9B79] border border-white/10">
+                <Send size={24} />
               </div>
               <h3
-                className="text-headline-sm text-[#154212] mb-2"
-                style={{ fontFamily: "var(--font-manrope)" }}
+                className="text-2xl font-semibold text-[#F7F2EA] mb-2 font-serif"
+                style={{ fontFamily: "var(--font-serif)" }}
               >
-                Message Sent!
+                Inquiry Received
               </h3>
-              <p className="text-body-md text-[#42493e]">
-                Thank you for reaching out. We&apos;ll get back to you as soon
-                as possible.
+              <p className="text-sm text-[#C8BDB2] font-sans">
+                Thank you for contacting Vitaura Nutrition. Our culinary concierge team will review your inquiry and respond promptly.
               </p>
               <button
                 onClick={() => setStatus("idle")}
-                className="mt-6 text-[#154212] font-semibold underline underline-offset-4"
-                style={{ fontFamily: "var(--font-manrope)" }}
+                className="mt-6 text-[#C87D55] font-bold underline underline-offset-4 font-sans text-xs uppercase tracking-wider cursor-pointer"
               >
                 Send another message
               </button>
@@ -140,10 +149,9 @@ export function ContactPageContent() {
               <div>
                 <label
                   htmlFor="contact-name"
-                  className="block text-label-md text-[#42493e] mb-2"
-                  style={{ fontFamily: "var(--font-manrope)" }}
+                  className="block text-[11px] font-bold uppercase tracking-wider text-[#F7F2EA] mb-2 font-sans"
                 >
-                  Name
+                  Your Name
                 </label>
                 <input
                   id="contact-name"
@@ -154,20 +162,18 @@ export function ContactPageContent() {
                     setName(e.target.value);
                     if (errors.name) setErrors((p) => ({ ...p, name: "" }));
                   }}
-                  className={`w-full px-4 py-3.5 bg-[#fff8f3] border rounded-xl text-[#1f1b15] placeholder-[#72796e] focus:outline-none focus:ring-2 focus:ring-[#154212]/10 transition-all ${
+                  className={`w-full px-4 py-3.5 bg-[#211B18] border rounded-xl text-[#F7F2EA] placeholder-[#91857B] focus:outline-none focus:border-[#C87D55] transition-all font-sans text-sm ${
                     errors.name
-                      ? "border-[#ba1a1a]"
-                      : "border-[#c2c9bb]/40 focus:border-[#154212]"
+                      ? "border-red-500"
+                      : "border-white/10"
                   }`}
-                  style={{ fontFamily: "var(--font-merriweather)" }}
-                  placeholder="Your name"
+                  placeholder="Your full name"
                   aria-describedby={errors.name ? "name-error" : undefined}
                 />
                 {errors.name && (
                   <p
                     id="name-error"
-                    className="mt-1 text-sm text-[#ba1a1a]"
-                    style={{ fontFamily: "var(--font-manrope)" }}
+                    className="mt-1 text-xs text-red-400 font-sans font-semibold"
                     role="alert"
                   >
                     {errors.name}
@@ -179,10 +185,9 @@ export function ContactPageContent() {
               <div>
                 <label
                   htmlFor="contact-email"
-                  className="block text-label-md text-[#42493e] mb-2"
-                  style={{ fontFamily: "var(--font-manrope)" }}
+                  className="block text-[11px] font-bold uppercase tracking-wider text-[#F7F2EA] mb-2 font-sans"
                 >
-                  Email
+                  Email Address
                 </label>
                 <input
                   id="contact-email"
@@ -193,20 +198,18 @@ export function ContactPageContent() {
                     setEmail(e.target.value);
                     if (errors.email) setErrors((p) => ({ ...p, email: "" }));
                   }}
-                  className={`w-full px-4 py-3.5 bg-[#fff8f3] border rounded-xl text-[#1f1b15] placeholder-[#72796e] focus:outline-none focus:ring-2 focus:ring-[#154212]/10 transition-all ${
+                  className={`w-full px-4 py-3.5 bg-[#211B18] border rounded-xl text-[#F7F2EA] placeholder-[#91857B] focus:outline-none focus:border-[#C87D55] transition-all font-sans text-sm ${
                     errors.email
-                      ? "border-[#ba1a1a]"
-                      : "border-[#c2c9bb]/40 focus:border-[#154212]"
+                      ? "border-red-500"
+                      : "border-white/10"
                   }`}
-                  style={{ fontFamily: "var(--font-merriweather)" }}
                   placeholder="your@email.com"
                   aria-describedby={errors.email ? "email-error" : undefined}
                 />
                 {errors.email && (
                   <p
                     id="email-error"
-                    className="mt-1 text-sm text-[#ba1a1a]"
-                    style={{ fontFamily: "var(--font-manrope)" }}
+                    className="mt-1 text-xs text-red-400 font-sans font-semibold"
                     role="alert"
                   >
                     {errors.email}
@@ -218,10 +221,9 @@ export function ContactPageContent() {
               <div>
                 <label
                   htmlFor="contact-message"
-                  className="block text-label-md text-[#42493e] mb-2"
-                  style={{ fontFamily: "var(--font-manrope)" }}
+                  className="block text-[11px] font-bold uppercase tracking-wider text-[#F7F2EA] mb-2 font-sans"
                 >
-                  Message
+                  Inquiry Details
                 </label>
                 <textarea
                   id="contact-message"
@@ -232,13 +234,12 @@ export function ContactPageContent() {
                     if (errors.message)
                       setErrors((p) => ({ ...p, message: "" }));
                   }}
-                  className={`w-full px-4 py-3.5 bg-[#fff8f3] border rounded-xl text-[#1f1b15] placeholder-[#72796e] focus:outline-none focus:ring-2 focus:ring-[#154212]/10 transition-all resize-y ${
+                  className={`w-full px-4 py-3.5 bg-[#211B18] border rounded-xl text-[#F7F2EA] placeholder-[#91857B] focus:outline-none focus:border-[#C87D55] transition-all resize-y font-sans text-sm ${
                     errors.message
-                      ? "border-[#ba1a1a]"
-                      : "border-[#c2c9bb]/40 focus:border-[#154212]"
+                      ? "border-red-500"
+                      : "border-white/10"
                   }`}
-                  style={{ fontFamily: "var(--font-merriweather)" }}
-                  placeholder="How can we help you?"
+                  placeholder="How can our culinary nutrition team assist you?"
                   aria-describedby={
                     errors.message ? "message-error" : undefined
                   }
@@ -247,8 +248,7 @@ export function ContactPageContent() {
                   {errors.message ? (
                     <p
                       id="message-error"
-                      className="text-sm text-[#ba1a1a]"
-                      style={{ fontFamily: "var(--font-manrope)" }}
+                      className="text-xs text-red-400 font-sans font-semibold"
                       role="alert"
                     >
                       {errors.message}
@@ -257,8 +257,7 @@ export function ContactPageContent() {
                     <span />
                   )}
                   <span
-                    className="text-xs text-[#72796e]"
-                    style={{ fontFamily: "var(--font-manrope)" }}
+                    className="text-xs text-[#91857B] font-sans"
                   >
                     {message.length}/2000
                   </span>
@@ -267,23 +266,21 @@ export function ContactPageContent() {
 
               {status === "error" && (
                 <p
-                  className="text-sm text-[#ba1a1a] bg-[#ffdad6] px-4 py-3 rounded-lg"
-                  style={{ fontFamily: "var(--font-manrope)" }}
+                  className="text-xs text-red-400 bg-red-950/40 px-4 py-3 rounded-xl border border-red-800/60 font-sans"
                   role="alert"
                 >
-                  Something went wrong. Please try again or reach us on
-                  WhatsApp.
+                  Unable to send message right now. Please try again or chat with us on WhatsApp.
                 </p>
               )}
 
-              <Button
+              <button
                 type="submit"
-                loading={status === "loading"}
-                className="mt-2"
+                disabled={status === "loading"}
+                className="mt-2 bg-[#C87D55] text-[#12100F] hover:bg-[#E09A72] border border-[#E09A72]/40 font-bold uppercase tracking-widest text-xs px-8 py-4 rounded-full cursor-pointer font-sans shadow-md inline-flex items-center gap-2"
               >
-                <Send size={16} aria-hidden="true" />
-                Send Message
-              </Button>
+                <Send size={14} aria-hidden="true" />
+                <span>{status === "loading" ? "Submitting..." : "Send Inquiry"}</span>
+              </button>
             </form>
           )}
         </div>
@@ -291,70 +288,68 @@ export function ContactPageContent() {
         {/* Right Column (5 cols) */}
         <div className="md:col-span-5 flex flex-col gap-5">
           {/* WhatsApp CTA */}
-          <div className="bg-[#2d5a27] rounded-3xl p-8 text-white relative overflow-hidden">
+          <div className="bg-[#211B18]/85 backdrop-blur-xl rounded-3xl p-8 text-[#F7F2EA] relative overflow-hidden border border-white/15 shadow-2xl">
             <div className="absolute -bottom-8 -right-8 opacity-10">
               <MessageCircle size={120} />
             </div>
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-3">
-                <MessageCircle size={28} />
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-[#C87D55] border border-white/15">
+                  <MessageCircle size={20} />
+                </div>
                 <h3
-                  className="text-headline-sm"
-                  style={{ fontFamily: "var(--font-manrope)" }}
+                  className="text-xl font-light font-serif text-[#F7F2EA]"
+                  style={{ fontFamily: "var(--font-serif)" }}
                 >
-                  Instant Support
+                  Direct Concierge WhatsApp
                 </h3>
               </div>
-              <p className="text-white/90 text-body-md mb-5">
-                Need a quick answer about an order? Chat with our team directly
-                on WhatsApp.
+              <p className="text-[#C8BDB2] text-xs sm:text-sm mb-5 font-sans leading-relaxed">
+                Need immediate help with custom dietary requirements or formulation recommendations? Reach our team directly.
               </p>
               <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi GronLiv! I have a question about my order.")}`}
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Vitaura Nutrition! I have an inquiry regarding your clean formulations.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white text-[#154212] text-label-md px-6 py-3.5 rounded-xl font-bold hover:bg-[#f0e7dd] transition-colors shadow-sm"
+                className="inline-flex items-center gap-2 bg-[#C87D55] text-[#12100F] text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-full hover:bg-[#E09A72] transition-all shadow-md font-sans border border-[#E09A72]/40"
               >
-                <MessageCircle size={18} />
-                Chat on WhatsApp
+                <MessageCircle size={16} />
+                <span>Chat with Concierge</span>
               </a>
             </div>
           </div>
 
-          {/* Rajkot Hub Card */}
+          {/* Kitchen Hub Card */}
           <div
-            className="bg-white rounded-3xl overflow-hidden border border-[#c2c9bb]/20 flex-1"
-            style={{ boxShadow: "0 4px 12px rgba(27,51,26,0.04)" }}
+            className="bg-[#1A1412] rounded-3xl overflow-hidden border border-white/10 flex-1 shadow-2xl"
           >
-            <div className="h-40 relative bg-[#eae1d7]">
+            <div className="h-40 relative bg-[#211B18]">
               <Image
                 src="/images/rajkot-map.jpg"
-                alt="GronLiv location in Rajkot"
+                alt="Vitaura artisan kitchen location"
                 fill
-                className="object-cover opacity-60 grayscale"
+                className="object-cover opacity-75"
                 sizes="(max-width: 768px) 100vw, 400px"
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <MapPin size={48} className="text-[#154212] drop-shadow-md" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.2))" }} />
+                <MapPin size={36} className="text-[#C87D55] drop-shadow-md" />
               </div>
             </div>
             <div className="p-6 space-y-3">
               <h3
-                className="text-headline-sm text-[#154212]"
-                style={{ fontFamily: "var(--font-manrope)" }}
+                className="text-lg font-semibold text-[#F7F2EA] font-serif"
+                style={{ fontFamily: "var(--font-serif)" }}
               >
-                Rajkot Kitchen
+                Artisan Nutrition Kitchen
               </h3>
-              <p className="text-body-md text-[#42493e]">
-                Freshly prepared meals shipped directly from our central
-                kitchen in Rajkot, Gujarat.
+              <p className="text-[#C8BDB2] font-sans text-xs sm:text-sm leading-relaxed">
+                Chef-crafted nutrition formulations prepared fresh daily in our small-batch kitchen.
               </p>
-              <div className="flex items-center gap-2 text-[#5f5e5a]">
-                <Mail size={16} strokeWidth={1.75} />
+              <div className="flex items-center gap-2 text-[#C8BDB2]">
+                <Mail size={16} strokeWidth={1.75} className="text-[#C87D55]" />
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="text-label-md hover:text-[#154212] transition-colors"
-                  style={{ fontFamily: "var(--font-manrope)" }}
+                  className="text-xs font-bold font-sans text-[#F7F2EA] hover:underline"
                 >
                   {CONTACT_EMAIL}
                 </a>
@@ -364,27 +359,26 @@ export function ContactPageContent() {
         </div>
       </section>
 
-      {/* Instagram Section */}
+      {/* Community Section */}
       <section>
         <div className="flex justify-between items-end mb-6">
           <h2
-            className="text-headline-sm text-[#154212]"
-            style={{ fontFamily: "var(--font-manrope)" }}
+            className="text-2xl font-light text-[#F7F2EA] font-serif"
+            style={{ fontFamily: "var(--font-serif)" }}
           >
-            Join the Community
+            Follow the Journey
           </h2>
           <a
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[#154212] font-semibold text-sm hover:underline underline-offset-4 transition-colors"
-            style={{ fontFamily: "var(--font-manrope)" }}
+            className="flex items-center gap-2 text-[#F7F2EA] font-bold text-xs uppercase tracking-wider hover:text-[#C87D55] transition-colors font-sans"
           >
             <InstagramIcon size={16} />
-            @{INSTAGRAM_HANDLE}
+            <span>@{INSTAGRAM_HANDLE}</span>
           </a>
         </div>
-        {/* DEMO INSTAGRAM GRID — Replace with real Instagram feed */}
+        
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {DEMO_INSTAGRAM_POSTS.map((post) => (
             <a
@@ -392,7 +386,7 @@ export function ContactPageContent() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="aspect-square relative overflow-hidden rounded-2xl group bg-[#eae1d7]"
+              className="aspect-square relative overflow-hidden rounded-2xl group bg-[#1A1412] border border-white/10 shadow-md"
               aria-label={`View on Instagram: ${post.alt}`}
             >
               <Image
@@ -402,9 +396,9 @@ export function ContactPageContent() {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 bg-[#154212]/0 group-hover:bg-[#154212]/20 transition-colors duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-[#12100F]/0 group-hover:bg-[#12100F]/50 transition-colors duration-300 flex items-center justify-center">
                 <InstagramIcon
-                  size={32}
+                  size={28}
                   className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 />
               </div>

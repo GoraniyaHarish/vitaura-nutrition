@@ -6,13 +6,13 @@ import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { MenuPageContent } from "@/components/menu/MenuPageContent";
 
 export const metadata: Metadata = {
-  title: "Our Menu — Fresh Nutrition Shakes & Bowls",
+  title: "Our Formulations — Chef-Crafted Shakes, Bowls & Bites",
   description:
-    "Browse GronLiv's fresh nutrition shakes and bowls. Made daily in Rajkot with real ingredients. No preservatives. Order now for delivery across Rajkot.",
+    "Explore Vitaura's chef-crafted protein shakes, organic wellness bowls, and nutrient-dense power bites made from 100% whole, clean ingredients.",
   openGraph: {
-    title: "GronLiv Menu — Fresh Nutrition Shakes",
+    title: "Vitaura Menu — Pure Nutrition Formulations",
     description:
-      "Browse our freshly prepared nutrition shakes and bowls. Made daily in Rajkot.",
+      "Chef-crafted protein shakes, organic wellness bowls, and power bites made from 100% clean ingredients.",
   },
 };
 

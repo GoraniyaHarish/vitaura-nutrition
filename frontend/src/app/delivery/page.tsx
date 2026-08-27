@@ -6,9 +6,9 @@ import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { DeliveryPageContent } from "@/components/delivery/DeliveryPageContent";
 
 export const metadata: Metadata = {
-  title: "Delivery & Pickup — Rajkot Delivery Zones",
+  title: "Cold-Chain Delivery & Pickup — Vitaura Nutrition",
   description:
-    "Check if GronLiv delivers to your Rajkot pincode. Same-day delivery available across Rajkot. Pickup also available from our kitchen.",
+    "Check if Vitaura delivers to your pincode. Direct cold-chain delivery and artisan kitchen pickup available.",
 };
 
 export default function DeliveryPage() {

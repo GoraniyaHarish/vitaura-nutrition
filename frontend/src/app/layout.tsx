@@ -1,76 +1,77 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Merriweather } from "next/font/google";
+import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
-import CustomCursor from "@/components/ui/CustomCursor";
+import { InteractiveAtmosphere } from "@/components/ui/InteractiveAtmosphere";
 import { CartProvider } from "@/context/CartContext";
 import "./globals.css";
 
-// --- Self-hosted Fonts ---
-const manrope = Manrope({
+// --- The Culinary Atelier Google Fonts ---
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-cormorant",
   display: "swap",
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   preload: true,
 });
 
-const merriweather = Merriweather({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-merriweather",
+  variable: "--font-jakarta",
   display: "swap",
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
   preload: true,
 });
 
 // --- Site Metadata ---
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://gronliv.in"
+    process.env.NEXT_PUBLIC_VITAURA_SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || "https://vitauranutrition.com"
   ),
   title: {
-    default: "GronLiv 🧋 — Eat Better. Live Better. | Fresh Nutrition Shakes in Rajkot",
-    template: "%s | GronLiv",
+    default: "Vitaura Nutrition — Pure Nutrition. Elevated Living.",
+    template: "%s | Vitaura Nutrition",
   },
   description:
-    "Freshly prepared premium nutrition shakes made with real ingredients. No artificial preservatives. Delivered across Rajkot, Gujarat. Eat Better. Live Better.",
+    "Vitaura is a premium D2C health and nutrition platform offering chef-crafted protein shakes, organic wellness bowls, and nutrient-dense power bites made from 100% whole, clean ingredients.",
   keywords: [
-    "GronLiv",
-    "nutrition shakes Rajkot",
-    "fresh protein shakes",
-    "healthy shakes Rajkot",
-    "fresh nutrition delivery",
-    "healthy everyday fuel",
-    "premium nutrition drinks",
-    "Rajkot food delivery",
-    "fresh shakes Gujarat",
-    "no preservatives protein shake",
+    "Vitaura",
+    "Vitaura Nutrition",
+    "pure nutrition",
+    "elevated living",
+    "chef crafted protein shakes",
+    "organic wellness bowls",
+    "nutrient dense power bites",
+    "clean label nutrition",
+    "whole ingredients",
+    "premium D2C wellness",
   ],
-  authors: [{ name: "GronLiv" }],
-  creator: "GronLiv",
-  publisher: "GronLiv",
+  authors: [{ name: "Vitaura Nutrition" }],
+  creator: "Vitaura Nutrition",
+  publisher: "Vitaura Nutrition",
   openGraph: {
     type: "website",
-    locale: "en_IN",
+    locale: "en_US",
     url: "/",
-    siteName: "GronLiv",
-    title: "GronLiv 🧋 — Eat Better. Live Better.",
+    siteName: "Vitaura Nutrition",
+    title: "Vitaura Nutrition — Pure Nutrition. Elevated Living.",
     description:
-      "Freshly prepared premium nutrition shakes made with real ingredients. No artificial preservatives. Delivered across Rajkot.",
+      "Vitaura is a premium D2C health and nutrition platform offering chef-crafted protein shakes, organic wellness bowls, and nutrient-dense power bites made from 100% whole, clean ingredients.",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "GronLiv — Fresh Premium Nutrition Shakes in Rajkot",
+        url: "/images/logo.jpg",
+        width: 1024,
+        height: 1024,
+        alt: "Vitaura Nutrition — Pure Nutrition. Elevated Living.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GronLiv 🧋 — Eat Better. Live Better.",
+    title: "Vitaura Nutrition — Pure Nutrition. Elevated Living.",
     description:
-      "Freshly prepared premium nutrition shakes made with real ingredients. Delivered across Rajkot.",
-    images: ["/og-image.jpg"],
+      "Chef-crafted protein shakes, organic wellness bowls, and nutrient-dense power bites made from 100% whole, clean ingredients.",
+    images: ["/images/logo.jpg"],
   },
   robots: {
     index: true,
@@ -83,17 +84,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  other: {
-    "geo.region": "IN-GJ",
-    "geo.placename": "Rajkot",
-    "geo.position": "22.3039;70.8022",
-    "ICBM": "22.3039, 70.8022",
-  },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#154212",
-  colorScheme: "light",
+  themeColor: "#12100F",
+  colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -105,18 +100,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${merriweather.variable}`}>
-      <body className="antialiased min-h-screen flex flex-col bg-[#FAF8F5] text-[#112419]">
+    <html lang="en" data-scroll-behavior="smooth" className={`${cormorant.variable} ${jakarta.variable}`}>
+      <body className="antialiased min-h-screen flex flex-col bg-[#12100F] text-[#F7F2EA] font-sans selection:bg-[#C87D55] selection:text-[#12100F] relative overflow-x-hidden">
         <CartProvider>
           <NextTopLoader
-            color="#C8A265"
+            color="#C87D55"
             height={3}
             showSpinner={false}
-            shadow="0 0 10px #C8A265, 0 0 5px #FAF8F5"
+            shadow="0 0 10px #C87D55, 0 0 5px #12100F"
             easing="cubic-bezier(0.16, 1, 0.3, 1)"
           />
-          <CustomCursor />
-          {children}
+          {/* Global Living Cinematic Background Canvas */}
+          <InteractiveAtmosphere />
+          <div className="relative z-10 flex flex-col min-h-screen">
+            {children}
+          </div>
         </CartProvider>
       </body>
     </html>

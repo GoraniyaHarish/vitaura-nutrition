@@ -1,28 +1,59 @@
+import { Sparkles } from "lucide-react";
+
 export function HowItWorks() {
   const steps = [
-    { number: "01", title: "Choose Your Blend", desc: "Select from our range of nutritionist-crafted blends." },
-    { number: "02", title: "Freshly Prepared", desc: "We prepare your order using premium natural ingredients." },
-    { number: "03", title: "Delivered to You", desc: "Enjoy your fresh nutrition delivered straight to your door." }
+    {
+      number: "01",
+      title: "Select Formulation",
+      desc: "Choose from 8 chef-crafted protein shakes, wellness bowls, and nutrient-dense power bites tailored to your vitality goals."
+    },
+    {
+      number: "02",
+      title: "Artisan Kitchen Prep",
+      desc: "Each order is prepared in small batches using 100% whole, clean botanicals with zero preservatives or synthetic gums."
+    },
+    {
+      number: "03",
+      title: "Cold-Chain Dispatch",
+      desc: "Delivered directly to your door in temperature-monitored packaging to guarantee peak enzymatic freshness."
+    }
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-surface">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-headline-md font-manrope font-semibold text-primary mb-12">
-          How It Works
-        </h2>
+    <section className="py-20 md:py-32 bg-transparent border-b border-white/10">
+      <div className="container-vitaura text-center">
+        <div className="max-w-2xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 bg-[#211B18] text-[#C87D55] text-xs font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-widest font-sans border border-white/10 shadow-xs">
+            <Sparkles size={13} className="text-[#C87D55]" aria-hidden="true" />
+            <span>The Kitchen Ritual</span>
+          </div>
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl font-light text-[#F7F2EA] mb-4 tracking-tight"
+            style={{ fontFamily: 'var(--font-serif)' }}
+          >
+            How Pure Nutrition Arrives
+          </h2>
+          <p className="text-[#C8BDB2] text-base md:text-lg font-sans font-normal leading-relaxed">
+            From our artisan kitchen to your doorstep — seamless, uncompromised, and uncompromisingly fresh.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-outline-variant z-0" />
+          {/* Connector Line on Desktop */}
+          <div className="hidden md:block absolute top-12 left-[18%] right-[18%] h-[1px] bg-white/10 z-0" />
           
           {steps.map((step, idx) => (
-            <div key={idx} className="relative z-10 flex flex-col items-center">
-              <div className="w-24 h-24 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-headline-sm font-manrope font-bold mb-6 shadow-md border-4 border-surface">
-                {step.number}
+            <div key={idx} className="relative z-10 flex flex-col items-center group">
+              <div className="w-20 h-20 rounded-full bg-[#211B18] text-[#F7F2EA] flex items-center justify-center text-xl font-bold font-serif mb-6 shadow-md border-2 border-white/10 group-hover:border-[#C87D55] group-hover:scale-105 transition-all duration-300">
+                <span className="text-[#C87D55]">{step.number}</span>
               </div>
-              <h3 className="text-headline-sm font-manrope font-semibold text-on-surface mb-2">
+              <h3
+                className="text-xl font-semibold text-[#F7F2EA] mb-2 font-serif"
+                style={{ fontFamily: 'var(--font-serif)' }}
+              >
                 {step.title}
               </h3>
-              <p className="text-body-md font-merriweather text-on-surface-variant max-w-xs">
+              <p className="text-xs sm:text-sm font-sans text-[#C8BDB2] max-w-xs leading-relaxed">
                 {step.desc}
               </p>
             </div>

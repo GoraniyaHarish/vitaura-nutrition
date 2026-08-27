@@ -6,9 +6,9 @@ import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { ContactPageContent } from "@/components/contact/ContactPageContent";
 
 export const metadata: Metadata = {
-  title: "Contact GronLiv — Get in Touch",
+  title: "Contact Concierge — Vitaura Nutrition",
   description:
-    "Have a question about GronLiv? Contact us via our form, WhatsApp, or email. We'd love to hear from you.",
+    "Have a question about Vitaura Nutrition? Contact our concierge via inquiry form, direct WhatsApp, or email.",
 };
 
 export default function ContactPage() {

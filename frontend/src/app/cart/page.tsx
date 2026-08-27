@@ -6,8 +6,8 @@ import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { CartPageContent } from "@/components/cart/CartPageContent";
 
 export const metadata: Metadata = {
-  title: "Your Cart — GronLiv",
-  description: "Review your GronLiv order and place your demo order.",
+  title: "Your Cart — Vitaura Nutrition",
+  description: "Review your selected Vitaura clean nutrition formulations and checkout securely.",
 };
 
 export default function CartPage() {

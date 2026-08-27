@@ -1,5 +1,5 @@
 -- ============================================================
--- GronLiv — Flyway Migration V4
+-- Vitaura Nutrition — Flyway Migration V4
 -- Delivery Zones & Pincodes
 -- ============================================================
 
@@ -19,7 +19,7 @@ CREATE TABLE delivery_zones (
 
 CREATE INDEX idx_delivery_zones_active ON delivery_zones(active);
 
--- Pincodes served by GronLiv
+-- Pincodes served by Vitaura Nutrition
 -- IMPORTANT: No pincode is assumed to be served without explicit data
 CREATE TABLE pincodes (
     id          BIGSERIAL       PRIMARY KEY,

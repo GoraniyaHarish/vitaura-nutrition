@@ -1,11 +1,11 @@
-# GRONLIV — MASTER CHROME QA REPORT
+# VITAURA — MASTER CHROME QA REPORT
 ## Real Browser Autonomous Testing & Visual QA
 
 **Date**: August 22, 2026  
 **Environment**: Local Staging (`PAYMENT_PROVIDER=demo`)  
 **Frontend**: Next.js 16 App Router on `http://localhost:3000`  
 **Backend**: Spring Boot 3.5.4 on `http://localhost:8080`  
-**Database**: PostgreSQL 18 on `localhost:5432` (`gronliv`)  
+**Database**: PostgreSQL 18 on `localhost:5432` (`VITAURA`)  
 **Browser**: Google Chrome `151.0.7922.170` via native Chrome DevTools Protocol (CDP)  
 **Status**: **READY FOR LOCAL DEMO (100% VERIFIED)**
 

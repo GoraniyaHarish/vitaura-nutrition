@@ -37,7 +37,7 @@ export function MobileBottomNav() {
 
   return (
     <nav
-      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-md border-t border-[#183324]/10 safe-area-bottom shadow-[0_-4px_16px_rgba(17,36,25,0.04)]"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#12100F]/95 backdrop-blur-md border-t border-white/10 safe-area-bottom shadow-[0_-8px_24px_rgba(0,0,0,0.6)]"
       aria-label="Mobile navigation"
     >
       <ul className="flex items-stretch justify-around px-2 py-1.5" role="list">
@@ -55,22 +55,22 @@ export function MobileBottomNav() {
                 className={cn(
                   "flex flex-col items-center justify-center gap-1 py-1.5 px-2 rounded-xl transition-all duration-200 min-h-[48px]",
                   active
-                    ? "text-[#112419] bg-[#183324]/10 font-bold"
-                    : "text-[#48544D] hover:text-[#112419]"
+                    ? "text-[#F7F2EA] bg-[#211B18] font-bold"
+                    : "text-[#91857B] hover:text-[#F7F2EA]"
                 )}
                 aria-label={label}
                 aria-current={active ? "page" : undefined}
               >
                 <Icon
-                  size={20}
-                  strokeWidth={active ? 2.5 : 1.75}
-                  className={cn(active ? "text-[#112419]" : "text-[#48544D]")}
+                  size={19}
+                  strokeWidth={active ? 2.25 : 1.75}
+                  className={cn(active ? "text-[#C87D55]" : "text-[#91857B]")}
                   aria-hidden="true"
                 />
                 <span
                   className={cn(
-                    "text-[10px] leading-none tracking-wide font-manrope",
-                    active ? "font-bold text-[#112419]" : "font-medium text-[#48544D]"
+                    "text-[10px] leading-none tracking-wide font-sans",
+                    active ? "font-bold text-[#F7F2EA]" : "font-medium text-[#91857B]"
                   )}
                 >
                   {label}

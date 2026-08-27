@@ -12,11 +12,11 @@
         <relativePath/>
     </parent>
 
-    <groupId>in.gronliv</groupId>
-    <artifactId>gronliv-backend</artifactId>
+    <groupId>com.vitaura</groupId>
+    <artifactId>vitaura-backend</artifactId>
     <version>0.1.0-SNAPSHOT</version>
-    <name>gronliv-backend</name>
-    <description>GronLiv Premium Nutrition Platform - Backend API</description>
+    <name>vitaura-backend</name>
+    <description>Vitaura Nutrition Platform - Backend API</description>
 
     <properties>
         <java.version>25</java.version>

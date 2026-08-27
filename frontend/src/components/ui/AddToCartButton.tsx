@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ShoppingCart, Check } from "lucide-react";
+import { ShoppingBag, Check } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { type Product } from "@/lib/api";
 
@@ -26,17 +26,17 @@ export function AddToCartButton({ product, className }: AddToCartButtonProps) {
       onClick={handleClick}
       className={
         className ||
-        "w-full bg-[#112419] text-[#FAF8F5] hover:bg-[#183324] font-bold text-sm py-4 px-8 rounded-xl transition-all text-center flex items-center justify-center gap-2 shadow-md font-manrope uppercase tracking-wider active:scale-[0.99] border border-[#C8A265]/20 cursor-pointer"
+        "w-full bg-[#1A1412] text-[#FBF9F5] hover:bg-[#2C221E] font-bold text-xs py-4 px-8 rounded-full transition-all text-center flex items-center justify-center gap-2.5 shadow-md font-sans uppercase tracking-widest active:scale-[0.99] border border-[#C87D55]/30 cursor-pointer"
       }
     >
       {added ? (
         <>
-          <Check size={18} className="text-[#C8A265]" />
-          <span>Added to Cart!</span>
+          <Check size={16} className="text-[#C87D55]" />
+          <span>Added to Atelier Cart</span>
         </>
       ) : (
         <>
-          <ShoppingCart size={18} strokeWidth={2.2} />
+          <ShoppingBag size={16} strokeWidth={2} />
           <span>Add to Cart — ₹{Math.round(product.price / 100)}</span>
         </>
       )}

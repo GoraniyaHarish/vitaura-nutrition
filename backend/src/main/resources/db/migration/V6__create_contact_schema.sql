@@ -1,5 +1,5 @@
 -- ============================================================
--- GronLiv — Flyway Migration V6
+-- Vitaura Nutrition — Flyway Migration V6
 -- Contact Submissions Schema
 -- ============================================================
 

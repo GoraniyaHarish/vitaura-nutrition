@@ -25,7 +25,7 @@ function InstagramIcon({ size = 18 }: { size?: number }) {
 
 const FOOTER_LINKS = [
   { href: "/menu", label: "Our Menu" },
-  { href: "/about", label: "About GronLiv" },
+  { href: "/about", label: "About Vitaura" },
   { href: "/delivery", label: "Delivery Areas" },
   { href: "/contact", label: "Contact Us" },
 ];
@@ -36,40 +36,45 @@ const LEGAL_LINKS = [
 ];
 
 const WHATSAPP_NUMBER =
-  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919000000000";
+  process.env.NEXT_PUBLIC_VITAURA_WHATSAPP_NUMBER ||
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ||
+  "919000000000";
 const INSTAGRAM_URL =
-  process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com/gronliv";
+  process.env.NEXT_PUBLIC_VITAURA_INSTAGRAM_URL ||
+  process.env.NEXT_PUBLIC_INSTAGRAM_URL ||
+  "https://instagram.com/vitauranutrition";
 const CONTACT_EMAIL =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@gronliv.com";
+  process.env.NEXT_PUBLIC_VITAURA_CONTACT_EMAIL ||
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL ||
+  "hello@vitauranutrition.com";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer
-      className="bg-[#FAF8F5] border-t border-[#183324]/10 pb-20 md:pb-0"
+      className="bg-[#0D0B0A] text-[#F7F2EA] border-t border-white/10 pb-20 md:pb-0"
       aria-label="Site footer"
     >
-      <div className="container-gronliv py-12 md:py-16">
+      <div className="container-vitaura py-14 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
           {/* Brand Column */}
           <div className="md:col-span-2 space-y-4">
-            <Link href="/" className="inline-block" aria-label="GronLiv — Home">
+            <Link href="/" className="inline-block" aria-label="Vitaura Nutrition — Home">
               <Image
-                src="/images/logo.jpg"
-                alt="GrønLív — Eat Better. Live Better."
-                width={240}
-                height={90}
-                className="h-14 md:h-16 w-auto object-contain mix-blend-multiply"
+                src="/images/logo.png"
+                alt="Vitaura Nutrition — Pure Nutrition. Elevated Living."
+                width={220}
+                height={80}
+                className="h-12 md:h-14 w-auto object-contain brightness-0 invert opacity-95"
               />
             </Link>
-            <p className="text-body-md text-[#48544D] max-w-sm leading-relaxed font-merriweather">
-              Freshly prepared organic nutrition shakes crafted with real superfood ingredients.
-              No artificial preservatives. Delivered fresh across Rajkot.
+            <p className="text-sm text-[#C8BDB2] max-w-sm leading-relaxed font-sans">
+              Vitaura is a private culinary atelier offering chef-crafted protein shakes, organic wellness bowls, and nutrient-dense power bites made from 100% whole, clean superfoods.
             </p>
-            <div className="flex items-center gap-2 text-xs font-bold text-[#112419] font-manrope uppercase tracking-wider">
-              <MapPin size={14} className="text-[#C8A265]" aria-hidden="true" />
-              <span>Cold-Chain Kitchen in Rajkot, Gujarat</span>
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#C87D55] font-sans uppercase tracking-wider">
+              <MapPin size={14} className="text-[#C87D55]" aria-hidden="true" />
+              <span>Small-Batch Kitchen • Cold-Chain Protected</span>
             </div>
 
             {/* Social Links */}
@@ -78,8 +83,8 @@ export function Footer() {
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full border border-[#183324]/20 text-[#48544D] hover:text-[#112419] hover:border-[#112419] transition-colors"
-                aria-label="GronLiv on Instagram"
+                className="p-2.5 rounded-full border border-white/15 text-[#C8BDB2] hover:text-[#F7F2EA] hover:border-[#C87D55] hover:bg-[#C87D55]/15 transition-colors"
+                aria-label="Vitaura Nutrition on Instagram"
               >
                 <InstagramIcon size={18} />
               </a>
@@ -87,15 +92,15 @@ export function Footer() {
                 href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full border border-[#183324]/20 text-[#48544D] hover:text-[#112419] hover:border-[#112419] transition-colors"
-                aria-label="Chat with GronLiv on WhatsApp"
+                className="p-2.5 rounded-full border border-white/15 text-[#C8BDB2] hover:text-[#F7F2EA] hover:border-[#C87D55] hover:bg-[#C87D55]/15 transition-colors"
+                aria-label="Chat with Vitaura Nutrition on WhatsApp"
               >
                 <MessageCircle size={18} strokeWidth={1.75} />
               </a>
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="p-2.5 rounded-full border border-[#183324]/20 text-[#48544D] hover:text-[#112419] hover:border-[#112419] transition-colors"
-                aria-label={`Email GronLiv at ${CONTACT_EMAIL}`}
+                className="p-2.5 rounded-full border border-white/15 text-[#C8BDB2] hover:text-[#F7F2EA] hover:border-[#C87D55] hover:bg-[#C87D55]/15 transition-colors"
+                aria-label={`Email Vitaura Nutrition at ${CONTACT_EMAIL}`}
               >
                 <Mail size={18} strokeWidth={1.75} />
               </a>
@@ -105,7 +110,7 @@ export function Footer() {
           {/* Pages */}
           <div>
             <h3
-              className="text-xs font-bold text-[#112419] mb-4 font-manrope uppercase tracking-widest"
+              className="text-xs font-bold text-[#C87D55] mb-4 font-sans uppercase tracking-widest"
             >
               EXPLORE
             </h3>
@@ -114,7 +119,7 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-body-md text-[#48544D] hover:text-[#112419] transition-colors font-merriweather"
+                    className="text-sm text-[#C8BDB2] hover:text-[#F7F2EA] hover:underline underline-offset-4 transition-colors font-sans"
                   >
                     {label}
                   </Link>
@@ -126,15 +131,15 @@ export function Footer() {
           {/* Legal + WhatsApp CTA */}
           <div>
             <h3
-              className="text-xs font-bold text-[#112419] mb-4 font-manrope uppercase tracking-widest"
+              className="text-xs font-bold text-[#C87D55] mb-4 font-sans uppercase tracking-widest"
             >
-              QUICK ORDER
+              CONCIERGE ORDER
             </h3>
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi! I'd like to order fresh shakes from GronLiv 🧋")}`}
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi! I'd like to order from Vitaura Nutrition.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#112419] text-[#FAF8F5] text-xs font-bold font-manrope uppercase tracking-wider px-5 py-3 rounded-xl hover:bg-[#183324] transition-colors mb-6 border border-[#C8A265]/20 shadow-xs"
+              className="inline-flex items-center gap-2 bg-[#C87D55] text-[#12100F] text-xs font-bold font-sans uppercase tracking-wider px-5 py-3 rounded-full hover:bg-[#E09A72] transition-colors mb-6 shadow-md border border-[#E09A72]/40"
             >
               <MessageCircle size={16} />
               Chat on WhatsApp
@@ -144,7 +149,7 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-[#48544D] text-xs hover:text-[#112419] transition-colors font-manrope"
+                    className="text-[#91857B] text-xs hover:text-[#F7F2EA] transition-colors font-sans"
                   >
                     {label}
                   </Link>
@@ -155,17 +160,17 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-[#183324]/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-14 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p
-            className="text-[#48544D] text-xs text-center md:text-left font-manrope"
+            className="text-[#91857B] text-xs text-center md:text-left font-sans"
           >
-            © {currentYear} GrønLív. Freshly Prepared in Rajkot.
-            <span className="text-[#112419] font-bold"> Eat Better - Live Better.</span>
+            © {currentYear} Vitaura Nutrition.
+            <span className="text-[#F7F2EA] font-semibold"> Pure Superfoods. Chef-Crafted Daily.</span>
           </p>
           <p
-            className="text-[#48544D] text-xs font-manrope"
+            className="text-[#91857B] text-xs font-sans"
           >
-            Organic Nutrition & Superfoods 🧋
+            100% Whole & Clean Botanical Ingredients
           </p>
         </div>
       </div>

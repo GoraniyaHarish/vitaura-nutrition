@@ -1,5 +1,5 @@
 -- ============================================================
--- GronLiv — Flyway Migration V2
+-- Vitaura Nutrition — Flyway Migration V2
 -- Customer & Address Schema
 -- ============================================================
 

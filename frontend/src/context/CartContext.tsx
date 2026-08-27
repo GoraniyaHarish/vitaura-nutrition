@@ -22,7 +22,7 @@ interface CartContextType {
   isHydrated: boolean;
 }
 
-const STORAGE_KEY = "gronliv_cart_items_v1";
+const STORAGE_KEY = "vitaura_cart";
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
@@ -37,7 +37,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       if (stored) {
         const parsed = JSON.parse(stored);
         if (Array.isArray(parsed)) {
-          setItems(parsed);
+          queueMicrotask(() => setItems(parsed));
         }
       }
     } catch (e) {

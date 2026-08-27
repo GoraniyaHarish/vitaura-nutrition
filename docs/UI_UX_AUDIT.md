@@ -1,4 +1,4 @@
-# GRONLIV — UI/UX & VISUAL AUDIT REPORT
+# VITAURA — UI/UX & VISUAL AUDIT REPORT
 
 **Date**: August 22, 2026  
 **Auditor**: Senior UI/UX Designer & Full-Stack Frontend Engineer  
